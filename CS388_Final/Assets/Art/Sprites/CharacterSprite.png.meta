@@ -1,0 +1,2065 @@
+fileFormatVersion: 2
+guid: 3fe713209a01cdc42bffd5a3dc4ec93b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -824388629846048450
+    second: CharacterSprite_0
+  - first:
+      213: -1066395846101754898
+    second: CharacterSprite_1
+  - first:
+      213: 535231489507642049
+    second: CharacterSprite_2
+  - first:
+      213: 2808628755634435493
+    second: CharacterSprite_3
+  - first:
+      213: -8946866693762309086
+    second: CharacterSprite_4
+  - first:
+      213: -2075795144123099768
+    second: CharacterSprite_5
+  - first:
+      213: 9061816670901246425
+    second: CharacterSprite_6
+  - first:
+      213: -4548619905874123893
+    second: CharacterSprite_7
+  - first:
+      213: -7199848430087737516
+    second: CharacterSprite_8
+  - first:
+      213: -133272097437164584
+    second: CharacterSprite_9
+  - first:
+      213: -9081081509354009107
+    second: CharacterSprite_10
+  - first:
+      213: 2802773002147348453
+    second: CharacterSprite_11
+  - first:
+      213: 4861731663643459767
+    second: CharacterSprite_12
+  - first:
+      213: -5102260503498529994
+    second: CharacterSprite_13
+  - first:
+      213: -7849175828634479628
+    second: CharacterSprite_14
+  - first:
+      213: 5666456901310549643
+    second: CharacterSprite_15
+  - first:
+      213: -4665954962943442278
+    second: CharacterSprite_16
+  - first:
+      213: -4261267365870633754
+    second: CharacterSprite_17
+  - first:
+      213: -6246668782494901204
+    second: CharacterSprite_18
+  - first:
+      213: 2191362484290970689
+    second: CharacterSprite_19
+  - first:
+      213: 91853211363269135
+    second: CharacterSprite_20
+  - first:
+      213: 6646810347536794677
+    second: CharacterSprite_21
+  - first:
+      213: -3742119469028954642
+    second: CharacterSprite_22
+  - first:
+      213: -935720380287478153
+    second: CharacterSprite_23
+  - first:
+      213: 4105311133029966246
+    second: CharacterSprite_24
+  - first:
+      213: 3772132328127228040
+    second: CharacterSprite_25
+  - first:
+      213: -943789249768828621
+    second: CharacterSprite_26
+  - first:
+      213: 7688196926396783541
+    second: CharacterSprite_27
+  - first:
+      213: -1829161820111909777
+    second: CharacterSprite_28
+  - first:
+      213: 1902827859452512938
+    second: CharacterSprite_29
+  - first:
+      213: 4737316036764196152
+    second: CharacterSprite_30
+  - first:
+      213: 1891234362698454954
+    second: CharacterSprite_31
+  - first:
+      213: 3725337285351711789
+    second: CharacterSprite_32
+  - first:
+      213: 3566446081648308268
+    second: CharacterSprite_33
+  - first:
+      213: 8595636043712628950
+    second: CharacterSprite_34
+  - first:
+      213: 4011346793298952293
+    second: CharacterSprite_35
+  - first:
+      213: 2864106135668306379
+    second: CharacterSprite_36
+  - first:
+      213: -4143996434130908388
+    second: CharacterSprite_37
+  - first:
+      213: -4509836129799921402
+    second: CharacterSprite_38
+  - first:
+      213: -442634634324960615
+    second: CharacterSprite_39
+  - first:
+      213: -700444161359672789
+    second: CharacterSprite_40
+  - first:
+      213: 6480562188906215890
+    second: CharacterSprite_41
+  - first:
+      213: 902919115927571473
+    second: CharacterSprite_42
+  - first:
+      213: -651768457366758086
+    second: CharacterSprite_43
+  - first:
+      213: -3096290888106250112
+    second: CharacterSprite_44
+  - first:
+      213: -4511352106216926553
+    second: CharacterSprite_45
+  - first:
+      213: 5105507240141734252
+    second: CharacterSprite_46
+  - first:
+      213: -2502569257931390847
+    second: CharacterSprite_47
+  - first:
+      213: -2734518878306656413
+    second: CharacterSprite_48
+  - first:
+      213: 3995255140297559926
+    second: CharacterSprite_49
+  - first:
+      213: -8113584677619957263
+    second: CharacterSprite_50
+  - first:
+      213: -3519279279053088873
+    second: CharacterSprite_51
+  - first:
+      213: -643317060497185794
+    second: CharacterSprite_52
+  - first:
+      213: 5209007447343110495
+    second: CharacterSprite_53
+  - first:
+      213: 8540843182067887045
+    second: CharacterSprite_54
+  - first:
+      213: -8015440614507789162
+    second: CharacterSprite_55
+  - first:
+      213: 2642585004904423935
+    second: CharacterSprite_56
+  - first:
+      213: 3847688046865896749
+    second: CharacterSprite_57
+  - first:
+      213: -5780668676514594103
+    second: CharacterSprite_58
+  - first:
+      213: -2415502496423352
+    second: CharacterSprite_59
+  - first:
+      213: 6048535704718947928
+    second: CharacterSprite_60
+  - first:
+      213: 4158867608190076113
+    second: CharacterSprite_61
+  - first:
+      213: -1559812239640952252
+    second: CharacterSprite_62
+  - first:
+      213: 1628094987518276930
+    second: CharacterSprite_63
+  - first:
+      213: 1315778285499008202
+    second: CharacterSprite_64
+  - first:
+      213: -3624929343110141270
+    second: CharacterSprite_65
+  - first:
+      213: 64535573170973070
+    second: CharacterSprite_66
+  - first:
+      213: 865174677040981332
+    second: CharacterSprite_67
+  - first:
+      213: 1872347686987897963
+    second: CharacterSprite_68
+  - first:
+      213: 1635788213404298160
+    second: CharacterSprite_69
+  - first:
+      213: -2922729434411955318
+    second: CharacterSprite_70
+  - first:
+      213: -1873070980599652534
+    second: CharacterSprite_71
+  - first:
+      213: 424447369477831138
+    second: CharacterSprite_72
+  - first:
+      213: 598315623238548270
+    second: CharacterSprite_73
+  - first:
+      213: -6242765853142419290
+    second: CharacterSprite_74
+  - first:
+      213: -3894569378257407096
+    second: CharacterSprite_75
+  - first:
+      213: -8124347474593099679
+    second: CharacterSprite_76
+  - first:
+      213: -3650778626051321952
+    second: CharacterSprite_77
+  - first:
+      213: -6837942892556658690
+    second: CharacterSprite_78
+  - first:
+      213: -6672175392575640839
+    second: CharacterSprite_79
+  - first:
+      213: 6571652730098236459
+    second: CharacterSprite_80
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Idel_Front_1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 96
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e31c721b8ee2f84f0800000000000000
+      internalID: -824388629846048450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Front_2
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 96
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeb1723c0a66331f0800000000000000
+      internalID: -1066395846101754898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Front_3
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 96
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cac4b434368d6700800000000000000
+      internalID: 535231489507642049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Front_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a5b985f8f04af620800000000000000
+      internalID: 2808628755634435493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Front_5
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 96
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2242681052856d380800000000000000
+      internalID: -8946866693762309086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Front_6
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 96
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 885df00805b4133e0800000000000000
+      internalID: -2075795144123099768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Front_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 97
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d918c8204a02cd70800000000000000
+      internalID: 9061816670901246425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Front_2
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 101
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b832a149b4e00e0c0800000000000000
+      internalID: -4548619905874123893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Front_3
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 100
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45f67ffcffff41c90800000000000000
+      internalID: -7199848430087737516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Front_4
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 97
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8db59c5cbb5862ef0800000000000000
+      internalID: -133272097437164584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Front_5
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 101
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ded069a1b7489f180800000000000000
+      internalID: -9081081509354009107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Front_6
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 100
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ef3c0b123375e620800000000000000
+      internalID: 2802773002147348453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Front_1
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 100
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b0ccb48037587340800000000000000
+      internalID: 4861731663643459767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Front_2
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 105
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 633e671ea112139b0800000000000000
+      internalID: -5102260503498529994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Front_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 102
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f3d8aaab20221390800000000000000
+      internalID: -7849175828634479628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Front_4
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 98
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8e0da1978c43ae40800000000000000
+      internalID: 5666456901310549643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Front_5
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 96
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9209c7bea23f3fb0800000000000000
+      internalID: -4665954962943442278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Front_6
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 97
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ecf05c68efecd4c0800000000000000
+      internalID: -4261267365870633754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Front_7
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 100
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2c9edda6df5f49a0800000000000000
+      internalID: -6246668782494901204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Front_8
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 99
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 144e742b198496e10800000000000000
+      internalID: 2191362484290970689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Front_9
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 97
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0a59c25204564100800000000000000
+      internalID: 91853211363269135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Left_1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 69
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53442567bc63e3c50800000000000000
+      internalID: 6646810347536794677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Left_2
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 69
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeda4756b22511cc0800000000000000
+      internalID: -3742119469028954642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Left_3
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 69
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7761fd39547a303f0800000000000000
+      internalID: -935720380287478153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Left_4
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 69
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a125b089bef8f830800000000000000
+      internalID: 4105311133029966246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Left_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 68
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8886ac7ed5e495430800000000000000
+      internalID: 3772132328127228040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Left_2
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 72
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33152b08dacf6e2f0800000000000000
+      internalID: -943789249768828621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Left_3
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 71
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bb5129ee56f1ba60800000000000000
+      internalID: 7688196926396783541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Left_4
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 68
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6cc58314038d96e0800000000000000
+      internalID: -1829161820111909777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Left_5
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 73
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaa42674bd3386a10800000000000000
+      internalID: 1902827859452512938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Left_6
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 69
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa757a7f1a30f3a10800000000000000
+      internalID: 1891234362698454954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Left_1
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 70
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2428e9f58e03b330800000000000000
+      internalID: 3725337285351711789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Left_2
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 76
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c203b3fb0df8e7130800000000000000
+      internalID: 3566446081648308268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Left_3
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 71
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5608c7dc7aa2ba730800000000000000
+      internalID: 4011346793298952293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Left_4
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 67
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc1b68f0b595fb720800000000000000
+      internalID: 2864106135668306379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Left_5
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 67
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1b4421f2319d76c0800000000000000
+      internalID: -4143996434130908388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Left_6
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 67
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 601ad002fe7d961c0800000000000000
+      internalID: -4509836129799921402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Left_7
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 69
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2a09211fb58746f0800000000000000
+      internalID: -700444161359672789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Back_1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 42
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d9359ea9f49fe950800000000000000
+      internalID: 6480562188906215890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Back_2
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 42
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11cc5cde620d78c00800000000000000
+      internalID: 902919115927571473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Back_3
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 42
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3d99de8a0474f6f0800000000000000
+      internalID: -651768457366758086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Back_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 42
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 080f52597d3c705d0800000000000000
+      internalID: -3096290888106250112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Back_5
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 42
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a2da3c59257461c0800000000000000
+      internalID: -4511352106216926553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Back_6
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 42
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6145d6e8c76ad640800000000000000
+      internalID: 5105507240141734252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Back_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 38
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 180cf23e486154dd0800000000000000
+      internalID: -2502569257931390847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Back_2
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 42
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36f9eea71990d0ad0800000000000000
+      internalID: -2734518878306656413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Back_3
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 41
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67f4d70e16ff17730800000000000000
+      internalID: 3995255140297559926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Back_4
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 38
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f1096b29b1c66f80800000000000000
+      internalID: -8113584677619957263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Back_5
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 42
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 797d5a24422092fc0800000000000000
+      internalID: -3519279279053088873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Back_6
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 41
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef3ed1bba8a7217f0800000000000000
+      internalID: -643317060497185794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Back_1
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 42
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f591043ccac1a4840800000000000000
+      internalID: 5209007447343110495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Back_2
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 45
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cb297d6f9b278670800000000000000
+      internalID: 8540843182067887045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Back_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 46
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 694460e8a3f63c090800000000000000
+      internalID: -8015440614507789162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Back_4
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 39
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff12a1a9f095ca420800000000000000
+      internalID: 2642585004904423935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Back_5
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 37
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2555f784ebb56530800000000000000
+      internalID: 3847688046865896749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Back_6
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 37
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c2ce1c4770f6cfa0800000000000000
+      internalID: -5780668676514594103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Back_7
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 39
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8422fbffc1b67fff0800000000000000
+      internalID: -2415502496423352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Back_8
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 40
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8563a0b4d27b0f350800000000000000
+      internalID: 6048535704718947928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Back_9
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 39
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d44c061e0447b930800000000000000
+      internalID: 4158867608190076113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Top_Left_1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 15
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44205e3480f6a5ae0800000000000000
+      internalID: -1559812239640952252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Top_Left_2
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 15
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 245fe9fd3c7289610800000000000000
+      internalID: 1628094987518276930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Top_Left_3
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 15
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac4475e1165924210800000000000000
+      internalID: 1315778285499008202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idel_Top_Left_4
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 15
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaaa708d7f9a1bdc0800000000000000
+      internalID: -3624929343110141270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Top_Left_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 9
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e896b3a03c645e000800000000000000
+      internalID: 64535573170973070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Top_Left_2
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 12
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 455e0bde8c7b10c00800000000000000
+      internalID: 865174677040981332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Top_Left_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 12
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6c10fa1d4aebf910800000000000000
+      internalID: 1872347686987897963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Top_Left_4
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 9
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bbebbb96bc73b610800000000000000
+      internalID: 1635788213404298160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Top_Left_5
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 11
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8b0c4f80116077d0800000000000000
+      internalID: -2922729434411955318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Top_Left_6
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 10
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4fd34afdd38106e0800000000000000
+      internalID: -1873070980599652534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Top_Left_1
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 13
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e9339b32a0f3e500800000000000000
+      internalID: 424447369477831138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Top_Left_2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 17
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2b33baa3e4ad4800800000000000000
+      internalID: 598315623238548270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Top_Left_3
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 18
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a8f18b388d3d59a0800000000000000
+      internalID: -6242765853142419290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Top_Left_4
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 14
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8837ad7e8c5b3f9c0800000000000000
+      internalID: -3894569378257407096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Top_Left_5
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 9
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16059093405804f80800000000000000
+      internalID: -8124347474593099679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Top_Left_6
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 9
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0af4f98ae24d55dc0800000000000000
+      internalID: -3650778626051321952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Top_Left_7
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 10
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa2d66c4dba763a0800000000000000
+      internalID: -6672175392575640839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dodge_Top_Left_8
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 11
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2c3bb40753333b50800000000000000
+      internalID: 6571652730098236459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 92528addefd5311458db6d4ac87c1f34
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      CharacterSprite_30: 4737316036764196152
+      CharacterSprite_34: 8595636043712628950
+      CharacterSprite_39: -442634634324960615
+      CharacterSprite_78: -6837942892556658690
+      Dodge_Back_1: 5209007447343110495
+      Dodge_Back_2: 8540843182067887045
+      Dodge_Back_3: -8015440614507789162
+      Dodge_Back_4: 2642585004904423935
+      Dodge_Back_5: 3847688046865896749
+      Dodge_Back_6: -5780668676514594103
+      Dodge_Back_7: -2415502496423352
+      Dodge_Back_8: 6048535704718947928
+      Dodge_Back_9: 4158867608190076113
+      Dodge_Front_1: 4861731663643459767
+      Dodge_Front_2: -5102260503498529994
+      Dodge_Front_3: -7849175828634479628
+      Dodge_Front_4: 5666456901310549643
+      Dodge_Front_5: -4665954962943442278
+      Dodge_Front_6: -4261267365870633754
+      Dodge_Front_7: -6246668782494901204
+      Dodge_Front_8: 2191362484290970689
+      Dodge_Front_9: 91853211363269135
+      Dodge_Left_1: 3725337285351711789
+      Dodge_Left_2: 3566446081648308268
+      Dodge_Left_3: 4011346793298952293
+      Dodge_Left_4: 2864106135668306379
+      Dodge_Left_5: -4143996434130908388
+      Dodge_Left_6: -4509836129799921402
+      Dodge_Left_7: -700444161359672789
+      Dodge_Top_Left_1: 424447369477831138
+      Dodge_Top_Left_2: 598315623238548270
+      Dodge_Top_Left_3: -6242765853142419290
+      Dodge_Top_Left_4: -3894569378257407096
+      Dodge_Top_Left_5: -8124347474593099679
+      Dodge_Top_Left_6: -3650778626051321952
+      Dodge_Top_Left_7: -6672175392575640839
+      Dodge_Top_Left_8: 6571652730098236459
+      Idel_Back_1: 6480562188906215890
+      Idel_Back_2: 902919115927571473
+      Idel_Back_3: -651768457366758086
+      Idel_Back_4: -3096290888106250112
+      Idel_Back_5: -4511352106216926553
+      Idel_Back_6: 5105507240141734252
+      Idel_Front_1: -824388629846048450
+      Idel_Front_2: -1066395846101754898
+      Idel_Front_3: 535231489507642049
+      Idel_Front_4: 2808628755634435493
+      Idel_Front_5: -8946866693762309086
+      Idel_Front_6: -2075795144123099768
+      Idel_Left_1: 6646810347536794677
+      Idel_Left_2: -3742119469028954642
+      Idel_Left_3: -935720380287478153
+      Idel_Left_4: 4105311133029966246
+      Idel_Top_Left_1: -1559812239640952252
+      Idel_Top_Left_2: 1628094987518276930
+      Idel_Top_Left_3: 1315778285499008202
+      Idel_Top_Left_4: -3624929343110141270
+      Walk_Back_1: -2502569257931390847
+      Walk_Back_2: -2734518878306656413
+      Walk_Back_3: 3995255140297559926
+      Walk_Back_4: -8113584677619957263
+      Walk_Back_5: -3519279279053088873
+      Walk_Back_6: -643317060497185794
+      Walk_Front_1: 9061816670901246425
+      Walk_Front_2: -4548619905874123893
+      Walk_Front_3: -7199848430087737516
+      Walk_Front_4: -133272097437164584
+      Walk_Front_5: -9081081509354009107
+      Walk_Front_6: 2802773002147348453
+      Walk_Left_1: 3772132328127228040
+      Walk_Left_2: -943789249768828621
+      Walk_Left_3: 7688196926396783541
+      Walk_Left_4: -1829161820111909777
+      Walk_Left_5: 1902827859452512938
+      Walk_Left_6: 1891234362698454954
+      Walk_Top_Left_1: 64535573170973070
+      Walk_Top_Left_2: 865174677040981332
+      Walk_Top_Left_3: 1872347686987897963
+      Walk_Top_Left_4: 1635788213404298160
+      Walk_Top_Left_5: -2922729434411955318
+      Walk_Top_Left_6: -1873070980599652534
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
@@ -14,6 +15,10 @@ public class PlayerInput : MonoBehaviour
 
     public static PlayerInput Instance { get; private set; }
     public PlayerInputData InputData;
+    public bool ForcedPC;
+    public bool IsController => (ForcedPC != true) && controllerInput == true;
+
+    private bool controllerInput;
 
     private void Awake()
     {
@@ -32,7 +37,7 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Application.platform != RuntimePlatform.Switch)
+        if (Application.platform == RuntimePlatform.Switch)
         {
             UpdateSwitchInput();
         }
@@ -49,12 +54,35 @@ public class PlayerInput : MonoBehaviour
 
     private void UpdatePCInput()
     {
+        var usedGamepad = Input.GetJoystickNames()[0] != string.Empty;
+        controllerInput = usedGamepad;
         PlayerInputData newInput = new PlayerInputData();
 
-        var vertical = Input.GetAxis("Vertical");
-        var horizontal = Input.GetAxis("Horizontal");
+        if (ForcedPC)
+            usedGamepad = false;
 
-        newInput.MoveDir = new Vector2(vertical, horizontal);
+        if (usedGamepad)
+        {
+            newInput.MoveDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            newInput.Aim = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+            newInput.Dodge = Input.GetButtonDown("Dodge");
+            newInput.Fire = Input.GetButton("Fire");
+            newInput.Reload = Input.GetButtonDown("Reload");
+            newInput.SwitchGun = Input.GetButtonDown("SwitchGun");
+        }
+        else
+        {
+            newInput.MoveDir = new Vector2(Input.GetAxisRaw("Horizontal_PC"), Input.GetAxisRaw("Vertical_PC"));
+            newInput.Aim = new Vector2(Input.GetAxis("Mouse X_PC"), Input.GetAxis("Mouse Y_PC"));
+            newInput.Dodge = Input.GetButtonDown("Dodge_PC");
+            newInput.Fire = Input.GetButton("Fire_PC");
+            newInput.Reload = Input.GetButtonDown("Reload_PC");
+            newInput.SwitchGun = Input.GetButtonDown("SwitchGun_PC");
+        }
 
+        if (newInput.Dodge)
+            Debug.Log("Hi");
+
+        InputData = newInput;
     }
 }
