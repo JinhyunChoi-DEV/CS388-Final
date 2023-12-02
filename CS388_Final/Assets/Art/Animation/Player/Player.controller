@@ -654,7 +654,7 @@ AnimatorStateTransition:
   - m_ConditionMode: 3
     m_ConditionEvent: Angle
     m_EventTreshold: 120
-  - m_ConditionMode: 3
+  - m_ConditionMode: 4
     m_ConditionEvent: Angle
     m_EventTreshold: 180
   m_DstStateMachine: {fileID: 0}
@@ -866,7 +866,7 @@ AnimatorStateTransition:
   - m_ConditionMode: 3
     m_ConditionEvent: Angle
     m_EventTreshold: 120
-  - m_ConditionMode: 3
+  - m_ConditionMode: 4
     m_ConditionEvent: Angle
     m_EventTreshold: 180
   m_DstStateMachine: {fileID: 0}
@@ -1333,10 +1333,10 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 4
+  - m_ConditionMode: 3
     m_ConditionEvent: Angle
     m_EventTreshold: 0
-  - m_ConditionMode: 3
+  - m_ConditionMode: 4
     m_ConditionEvent: Angle
     m_EventTreshold: 30
   m_DstStateMachine: {fileID: 0}
@@ -1643,10 +1643,10 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 4
+  - m_ConditionMode: 3
     m_ConditionEvent: Angle
     m_EventTreshold: 0
-  - m_ConditionMode: 3
+  - m_ConditionMode: 4
     m_ConditionEvent: Angle
     m_EventTreshold: 30
   m_DstStateMachine: {fileID: 0}
