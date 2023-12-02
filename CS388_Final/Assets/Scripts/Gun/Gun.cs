@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Gun : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class Gun : MonoBehaviour
     private bool waitReload;
     private bool canFire => currentBulletCount > 0 && waitReload == false && state.State != State.Dodge;
 
+    private ObjectPool<Bullet> pool;
+
     void Start()
     {
         currentBulletCount = MaxBulletCount;
@@ -29,6 +32,7 @@ public class Gun : MonoBehaviour
 
         waitFireDelay = false;
         waitReload = false;
+        pool = new ObjectPool<Bullet>(CreateBullet, OnTakeBulletFromPool, OnReturnBulletToPool, OnDestroyBullet, true, 500, 1000);
     }
 
     void Update()
@@ -48,17 +52,43 @@ public class Gun : MonoBehaviour
         if (waitFireDelay)
             return;
 
-        //TODO Use ObjectPool
-        var angle = aim.WeaponAngle;
-        Quaternion angleQ = Quaternion.Euler(0, 0, angle);
-        var newBullet = Instantiate(Bullet, firePosition.position, angleQ);
+        pool.Get();
 
-        var aimAngle = aim.Angle;
-        var dir = new Vector2(Mathf.Sin(aimAngle * Mathf.Deg2Rad), Mathf.Cos(aimAngle * Mathf.Deg2Rad)).normalized;
-        newBullet.gameObject.SetActive(true);
-        newBullet.Fire(dir, BulletSpeed);
         waitFireDelay = true;
         currentBulletCount -= 1;
+        UtilsClass.ShakeCamera(0.05f, 0.1f);
+    }
+
+    private Bullet CreateBullet()
+    {
+        var angle = aim.WeaponAngle;
+        Quaternion angleQ = Quaternion.Euler(0, 0, angle);
+        Bullet newBullet = Instantiate(Bullet, firePosition.position, angleQ);
+        newBullet.SetPool(pool);
+        return newBullet;
+    }
+
+    private void OnTakeBulletFromPool(Bullet bullet)
+    {
+        var angle = aim.WeaponAngle;
+        var aimAngle = aim.Angle;
+        var dir = new Vector2(Mathf.Sin(aimAngle * Mathf.Deg2Rad), Mathf.Cos(aimAngle * Mathf.Deg2Rad)).normalized;
+        Quaternion angleQ = Quaternion.Euler(0, 0, angle);
+
+        bullet.transform.position = firePosition.position;
+        bullet.transform.rotation = angleQ;
+        bullet.gameObject.SetActive(true);
+        bullet.Fire(dir, BulletSpeed);
+    }
+
+    private void OnReturnBulletToPool(Bullet bullet)
+    {
+        bullet.gameObject.SetActive(false);
+    }
+
+    private void OnDestroyBullet(Bullet bullet)
+    {
+        Destroy(bullet.gameObject);
     }
 
     void Reload()
