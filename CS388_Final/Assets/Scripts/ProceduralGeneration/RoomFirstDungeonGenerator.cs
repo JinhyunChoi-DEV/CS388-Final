@@ -15,10 +15,14 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     private int offset = 1;
     [SerializeField]
     private bool randomWalkRooms = false;
+    //[SerializeField]
+    //private GameObject CharacterSpawn;
 
     protected override void RunProceduralGeneration()
     {
         CreateRooms();
+        //spawn character
+        
     }
 
     private void CreateRooms()
@@ -45,9 +49,15 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
         HashSet<Vector2Int> corridors = ConnectRooms(roomCenters);
         floor.UnionWith(corridors);
-
+        //for (int i = 0; i < corridors.Count; i++)
+        //{
+        //    //corridors[i] = IncreaseCorridorSizeByOne(corridors[i]);
+        //    corridors = IncreaseCorridorBrush3by3(corridors);
+        //    floor.UnionWith(roomCenters);
+        //}
         tilemapVisualizer.PaintFloorTiles(floor);
         WallGenerator.CreateWalls(floor, tilemapVisualizer);
+        //CharacterSpawn.transform.position = roomCenters[0];
     }
 
     private HashSet<Vector2Int> CreateRoomsRandomly(List<BoundsInt> roomsList)
@@ -91,29 +101,39 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         HashSet<Vector2Int> corridor = new HashSet<Vector2Int>();
         var position = currentRoomCenter;
         corridor.Add(position);
-        while (position.y != destination.y)
+        for (int x = -1; x < 2; x++)
         {
-            if (destination.y > position.y)
+            position = currentRoomCenter;
+            position.x = position.x + x;
+            while (position.y != destination.y)
             {
-                position += Vector2Int.up;
+                if (destination.y > position.y)
+                {
+                    position += Vector2Int.up;
+                }
+                else if (destination.y < position.y)
+                {
+                    position += Vector2Int.down;
+                }
+                corridor.Add(position);
             }
-            else if (destination.y < position.y)
-            {
-                position += Vector2Int.down;
-            }
-            corridor.Add(position);
         }
-        while (position.x != destination.x)
+        for (int y = -1; y < 2; y++)
         {
-            if (destination.x > position.x)
+            position = currentRoomCenter;
+            position.y = position.y + y;
+            while (position.x != destination.x)
             {
-                position += Vector2Int.right;
+                if (destination.x > position.x)
+                {
+                    position += Vector2Int.right;
+                }
+                else if (destination.x < position.x)
+                {
+                    position += Vector2Int.left;
+                }
+                corridor.Add(position);
             }
-            else if (destination.x < position.x)
-            {
-                position += Vector2Int.left;
-            }
-            corridor.Add(position);
         }
         return corridor;
     }
@@ -150,4 +170,21 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         }
         return floor;
     }
+
+    //public HashSet<Vector2Int> IncreaseCorridorBrush3by3(HashSet<Vector2Int> corridor)
+    //{
+    //    HashSet<Vector2Int> newCorridor = new HashSet<Vector2Int>();
+    //    for (int i = 1; i < corridor.Count; i++)
+    //    {
+    //        for (int x = -1; x < 2; x++)
+    //        {
+    //            for (int y = -1; y < 2; y++)
+    //            {
+    //                Vector2Int position = (Vector2Int)room.min + new Vector2Int(col, row);
+    //                newCorridor.Add(corridor + new HashSet<Vector2Int>(x, y));
+    //            }
+    //        }
+    //    }
+    //    return newCorridor;
+    //}
 }

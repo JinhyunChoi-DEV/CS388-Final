@@ -54,7 +54,13 @@ public class PlayerInput : MonoBehaviour
 
     private void UpdatePCInput()
     {
-        var usedGamepad = Input.GetJoystickNames()[0] != string.Empty;
+        var usedGamepad = false;
+
+        if (Input.GetJoystickNames().Length == 0)
+            usedGamepad = false;
+        else
+            usedGamepad = Input.GetJoystickNames()[0] != string.Empty;
+
         controllerInput = usedGamepad;
         PlayerInputData newInput = new PlayerInputData();
 
