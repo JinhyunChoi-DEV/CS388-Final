@@ -9,9 +9,7 @@ public class PlayerMove : MonoBehaviour
     public float walkSpeed;
 
     void Start()
-    {
-
-    }
+    { }
 
     void Update()
     {
