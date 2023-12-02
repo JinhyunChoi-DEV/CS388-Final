@@ -13,6 +13,11 @@ public class TilemapVisualizer : MonoBehaviour
         wallInnerCornerDownLeft, wallInnerCornerDownRight,
         wallDiagonalCornerDownRight, wallDiagonalCornerDownLeft, wallDiagonalCornerUpRight, wallDiagonalCornerUpLeft;
 
+    internal void PaintSingleBasicWall(Vector2Int position)
+    {
+        PaintSingleTile(wallTilemap, wallTop, position);
+    }
+
     public void PaintFloorTiles(IEnumerable<Vector2Int> floorPositions)
     {
         PaintTiles(floorPositions, floorTilemap, floorTile);
@@ -64,7 +69,7 @@ public class TilemapVisualizer : MonoBehaviour
     public void Clear()
     {
         floorTilemap.ClearAllTiles();
-        //wallTilemap.ClearAllTiles();
+        wallTilemap.ClearAllTiles();
     }
 
     //internal void PaintSingleCornerWall(Vector2Int position, string binaryType)
