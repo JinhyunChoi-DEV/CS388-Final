@@ -4,8 +4,7 @@ public enum State
 {
     Idle,
     Move,
-    Dodge,
-    DoingDodge
+    Dodge
 }
 
 public class PlayerState : MonoBehaviour
@@ -27,25 +26,32 @@ public class PlayerState : MonoBehaviour
     {
         var input = PlayerInput.Instance.InputData;
 
-        //if (State == State.Dodge || State == State.DoingDodge)
-        //    UpdateDodge();
-        //else 
+        if (State == State.Dodge)
+        {
+            UpdateDodge(input.MoveDir);
+            return;
+        }
+
         if (input.Dodge && canDodge)
             State = State.Dodge;
         else
             State = IsIdle(input.MoveDir) ? State.Idle : State.Move;
     }
 
-    private void UpdateDodge()
+    private void UpdateDodge(Vector2 movedir)
     {
-        State = State.DoingDodge;
-
         canDodge = false;
         timer += Time.deltaTime;
+
         if (timer >= dodgeTime)
         {
             canDodge = true;
             timer = 0.0f;
+
+            if (IsIdle(movedir))
+                State = State.Idle;
+            else
+                State = State.Move;
         }
     }
 

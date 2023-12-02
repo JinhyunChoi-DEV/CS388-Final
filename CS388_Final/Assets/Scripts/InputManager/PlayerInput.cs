@@ -80,9 +80,6 @@ public class PlayerInput : MonoBehaviour
             newInput.SwitchGun = Input.GetButtonDown("SwitchGun_PC");
         }
 
-        if (newInput.Dodge)
-            Debug.Log("Hi");
-
         InputData = newInput;
     }
 }

@@ -267,7 +267,7 @@ MonoBehaviour:
   state: {fileID: 6859105520457778525}
   aim: {fileID: 7970209294634267574}
   rigidbody: {fileID: 2669409847125143393}
-  dodgeSpeed: 5
+  dodgeSpeed: 7
   walkSpeed: 5
 --- !u!1 &7717055276398362374
 GameObject:
