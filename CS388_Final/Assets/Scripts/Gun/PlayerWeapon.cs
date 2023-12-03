@@ -14,6 +14,17 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private Gun sniper;
     public GunType CurrentGun { get; private set; }
 
+    public Gun GetCurrentGun()
+    {
+        if (CurrentGun == GunType.Pistol)
+            return pistol;
+        if (CurrentGun == GunType.Rifle)
+            return rifle;
+        if (CurrentGun == GunType.Sniper)
+            return sniper;
+
+        return null;
+    }
 
     void Start()
     {
@@ -26,13 +37,17 @@ public class PlayerWeapon : MonoBehaviour
     {
         var switchGun = PlayerInput.Instance.InputData.SwitchGun;
 
-        gunTransform.gameObject.SetActive(state.State != State.Dodge);
-        if (state.State != State.Dodge && switchGun)
+        var currentGun = GetCurrentGun();
+        currentGun.Holder.SetActive(state.State != State.Dodge);
+        if (state.State != State.Dodge && switchGun && !GetCurrentGun().WaitReload)
             SwitchGun();
     }
 
     private void SwitchGun()
     {
+        var gun = GetCurrentGun();
+        gun.ClearFlag();
+
         if (CurrentGun == GunType.Pistol)
             CurrentGun = GunType.Rifle;
         else if (CurrentGun == GunType.Rifle)
