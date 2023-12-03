@@ -23,7 +23,7 @@ namespace Paparazzi
         public void OnClickStart()
         {
             //SoundManager.instance.SFXPlay("Button", Button_Clip);
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("MapGenerate");
         }
         public void OnClickOption()
         {

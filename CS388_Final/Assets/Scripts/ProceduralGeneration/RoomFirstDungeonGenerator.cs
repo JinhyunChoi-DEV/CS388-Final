@@ -101,7 +101,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         HashSet<Vector2Int> corridor = new HashSet<Vector2Int>();
         var position = currentRoomCenter;
         corridor.Add(position);
-        for (int x = -1; x < 2; x++)
+        for (int x = -3; x < 4; x++)
         {
             position = currentRoomCenter;
             position.x = position.x + x;
@@ -118,7 +118,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
                 corridor.Add(position);
             }
         }
-        for (int y = -1; y < 2; y++)
+        for (int y = -3; y < 4; y++)
         {
             position = currentRoomCenter;
             position.y = position.y + y;
