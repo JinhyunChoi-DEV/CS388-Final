@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -5,6 +6,7 @@ public class Gun : MonoBehaviour
 {
     [SerializeField] private PlayerState state;
     [SerializeField] private PlayerAim aim;
+    public GameObject Holder;
     public Bullet Bullet;
     public Transform firePosition;
     public int MaxBulletCount;
@@ -13,50 +15,64 @@ public class Gun : MonoBehaviour
     public float ReloadDelay;
     public float BulletSpeed;
     public float Damage;
-
-    private int currentBulletCount;
+    public float CameraShakeValue;
+    public int CurrentBulletCount { get; private set; }
+    public bool WaitReload { private set; get; }
     private float fireTimer;
     private float reloadTimer;
     private bool isInfiniteBullet;
     private bool waitFireDelay;
-    private bool waitReload;
-    private bool canFire => currentBulletCount > 0 && waitReload == false && state.State != State.Dodge;
+    private bool canFire => CurrentBulletCount > 0 && WaitReload == false && state.State != State.Dodge && waitFireDelay != true;
 
     private ObjectPool<Bullet> pool;
 
+    private Coroutine fireCoroutine = null;
+    private Coroutine reloadCoroutine = null;
+
+    public void ClearFlag()
+    {
+        if (fireCoroutine != null)
+            StopCoroutine(fireCoroutine);
+
+        if (reloadCoroutine != null)
+            StopCoroutine(reloadCoroutine);
+
+        waitFireDelay = false;
+        WaitReload = false;
+        fireTimer = 0.0f;
+        reloadTimer = 0.0f;
+    }
+
     void Start()
     {
-        currentBulletCount = MaxBulletCount;
+        CurrentBulletCount = MaxBulletCount;
         isInfiniteBullet = TotalBullets == -1;
         fireTimer = 0.0f;
 
         waitFireDelay = false;
-        waitReload = false;
-        pool = new ObjectPool<Bullet>(CreateBullet, OnTakeBulletFromPool, OnReturnBulletToPool, OnDestroyBullet, true, 500, 1000);
+        WaitReload = false;
+        pool = new ObjectPool<Bullet>(CreateBullet, OnTakeBulletFromPool, OnReturnBulletToPool, OnDestroyBullet, true, 100, 200);
     }
 
     void Update()
     {
-        UpdateDelayTime(ref waitFireDelay, ref fireTimer, FireDelay);
-        UpdateDelayTime(ref waitReload, ref reloadTimer, ReloadDelay);
-
         if (PlayerInput.Instance.InputData.Fire && canFire)
             Fire();
 
-        if (currentBulletCount <= 0 || PlayerInput.Instance.InputData.Reload)
+        if (CurrentBulletCount <= 0 || PlayerInput.Instance.InputData.Reload)
             Reload();
     }
 
     void Fire()
     {
-        if (waitFireDelay)
-            return;
+        if (fireCoroutine != null)
+            StopCoroutine(fireCoroutine);
 
+        fireCoroutine = StartCoroutine(FireUpdate());
         pool.Get();
 
-        waitFireDelay = true;
-        currentBulletCount -= 1;
-        UtilsClass.ShakeCamera(0.05f, 0.1f);
+        CurrentBulletCount -= 1;
+        UtilsClass.ShakeCamera(CameraShakeValue, 0.1f);
     }
 
     private Bullet CreateBullet()
@@ -93,37 +109,59 @@ public class Gun : MonoBehaviour
 
     void Reload()
     {
-        if (waitReload)
+        if (WaitReload)
             return;
 
-        if (isInfiniteBullet)
-            currentBulletCount = MaxBulletCount;
-        else
-            UpdateReload();
+        if (reloadCoroutine != null)
+            StopCoroutine(reloadCoroutine);
 
-        waitReload = true;
-    }
-
-    void UpdateDelayTime(ref bool checkFlag, ref float targetTimer, float totalTime)
-    {
-        if (checkFlag)
-        {
-            targetTimer += Time.deltaTime;
-            if (targetTimer >= totalTime)
-            {
-                targetTimer = 0.0f;
-                checkFlag = false;
-            }
-        }
+        reloadCoroutine = StartCoroutine(ReloadBullet());
+        WaitReload = true;
     }
 
     private void UpdateReload()
     {
-        //TODO: make warning panel;
         if (TotalBullets - MaxBulletCount < 0)
             return;
 
-        currentBulletCount = MaxBulletCount;
-        TotalBullets -= MaxBulletCount;
+        if (CurrentBulletCount == 0)
+        {
+            CurrentBulletCount = MaxBulletCount;
+            TotalBullets -= MaxBulletCount;
+        }
+        else
+        {
+            var needReloadBullet = MaxBulletCount - CurrentBulletCount;
+            CurrentBulletCount = MaxBulletCount;
+            TotalBullets -= needReloadBullet;
+        }
+    }
+
+    IEnumerator FireUpdate()
+    {
+        waitFireDelay = true;
+
+        yield return new WaitForSeconds(FireDelay);
+
+        waitFireDelay = false;
+        fireCoroutine = null;
+    }
+
+    IEnumerator ReloadBullet()
+    {
+        if (CurrentBulletCount == 0)
+            CurrentBulletCount = 0;
+
+        WaitReload = true;
+
+        yield return new WaitForSeconds(ReloadDelay);
+
+        if (isInfiniteBullet)
+            CurrentBulletCount = MaxBulletCount;
+        else
+            UpdateReload();
+
+        WaitReload = false;
+        reloadCoroutine = null;
     }
 }

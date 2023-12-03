@@ -3,17 +3,18 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     [SerializeField] private PlayerState state;
+    public float CurrentHP { get; private set; }
     public float MaxHP;
     public float DodgeSpeed;
     public float WalkSpeed;
 
-    private float currentHP;
     private bool ignoreDamageCollision;
 
     // Start is called before the first frame update
     void Start()
+
     {
-        currentHP = MaxHP;
+        CurrentHP = MaxHP;
 
         ignoreDamageCollision = false;
     }
@@ -21,8 +22,11 @@ public class PlayerData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F1))
+            ApplyDamage();
 
-        if (currentHP <= 0)
+
+        if (CurrentHP <= 0)
         {
             //TODO: Dead
         }
@@ -30,11 +34,14 @@ public class PlayerData : MonoBehaviour
         ignoreDamageCollision = state.State == State.Dodge;
     }
 
-    public void ApplyDamage(float damage)
+    public void ApplyDamage()
     {
+        if (CurrentHP <= 0)
+            return;
+
         if (ignoreDamageCollision)
             return;
 
-        currentHP -= damage;
+        CurrentHP -= 0.5f;
     }
 }
