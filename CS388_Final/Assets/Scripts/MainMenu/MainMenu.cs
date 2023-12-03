@@ -11,14 +11,17 @@ namespace Paparazzi
         // Start is called before the first frame update
         void Start()
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;
         }
 
         // Update is called once per frame
         void Update()
         {
-
+            if(Input.GetKeyDown(KeyCode.A))
+            {
+                SceneManager.LoadScene("MapGenerate");
+            }
         }
         public void OnClickStart()
         {

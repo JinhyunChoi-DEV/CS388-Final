@@ -16,7 +16,7 @@ public class SplashLogo : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            SceneManager.LoadScene("MapGenerate");
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }

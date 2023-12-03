@@ -19,6 +19,7 @@ public class RandomMapStarter : MonoBehaviour
         }
         RandNum = Random.Range(0, mapList.Count);
         mapList[RandNum].SetActive(true);
+        mapList[RandNum].transform.position = new Vector3(0, 0, 0);
     }
 
     // Update is called once per frame
