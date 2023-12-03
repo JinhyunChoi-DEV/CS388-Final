@@ -12,6 +12,9 @@ public class PlayerCamera : MonoBehaviour
 
     void Update()
     {
+        if (!PlayerData.IsAlive)
+            return;
+
         var playerPosition = playerTransform.position;
         cam.transform.position = new Vector3(playerPosition.x, playerPosition.y, -10);
     }

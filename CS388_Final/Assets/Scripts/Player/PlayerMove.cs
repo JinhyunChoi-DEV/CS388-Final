@@ -4,7 +4,7 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private PlayerState state;
     [SerializeField] private PlayerAim aim;
-    [SerializeField] private Rigidbody2D rigidbody;
+    [SerializeField] private Rigidbody2D rb;
     [SerializeField] private PlayerData data;
 
     void Start()
@@ -12,6 +12,12 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        if (!PlayerData.IsAlive)
+        {
+            rb.velocity = new Vector3(0, 0, 0);
+            return;
+        }
+
         if (state.State == State.Dodge)
             Dodge();
         else if (state.State == State.Move)
@@ -25,18 +31,18 @@ public class PlayerMove : MonoBehaviour
         var aimAngle = aim.Angle;
         var dir = new Vector2(Mathf.Sin(aimAngle * Mathf.Deg2Rad), Mathf.Cos(aimAngle * Mathf.Deg2Rad)).normalized;
 
-        rigidbody.velocity = dir * data.DodgeSpeed;
+        rb.velocity = dir * data.DodgeSpeed;
     }
 
     private void Walk()
     {
         var moveDir = PlayerInput.Instance.InputData.MoveDir;
 
-        rigidbody.velocity = moveDir * data.WalkSpeed;
+        rb.velocity = moveDir * data.WalkSpeed;
     }
 
     private void Idle()
     {
-        rigidbody.velocity = Vector3.zero;
+        rb.velocity = Vector3.zero;
     }
 }

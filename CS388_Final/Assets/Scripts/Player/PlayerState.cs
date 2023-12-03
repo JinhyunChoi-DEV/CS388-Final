@@ -24,6 +24,9 @@ public class PlayerState : MonoBehaviour
 
     void Update()
     {
+        if (!PlayerData.IsAlive)
+            return;
+
         var input = PlayerInput.Instance.InputData;
 
         if (State == State.Dodge)
