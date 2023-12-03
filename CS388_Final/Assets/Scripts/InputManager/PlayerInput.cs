@@ -55,6 +55,7 @@ public class PlayerInput : MonoBehaviour
     private void UpdatePCInput()
     {
         var usedGamepad = false;
+
         if (Input.GetJoystickNames().Length == 0)
             usedGamepad = false;
         else

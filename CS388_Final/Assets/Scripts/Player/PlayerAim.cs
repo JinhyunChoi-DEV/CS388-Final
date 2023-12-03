@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Pool;
 using UnityEngine.UIElements;
 using Cursor = UnityEngine.Cursor;
 
@@ -6,6 +7,7 @@ public class PlayerAim : MonoBehaviour
 {
     [SerializeField] private Transform target;
     public float Angle { get; private set; }
+    public float WeaponAngle { get; private set; }
 
     void Start()
     {
@@ -31,6 +33,7 @@ public class PlayerAim : MonoBehaviour
 
         var aimDir = (mousePosition - target.position).normalized;
         Angle = Mathf.Atan2(aimDir.x, aimDir.y) * Mathf.Rad2Deg;
+        WeaponAngle = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg;
 
         gameObject.transform.position = mousePosition;
     }
@@ -46,5 +49,6 @@ public class PlayerAim : MonoBehaviour
         var x = 3.0f * Mathf.Sin(rad);
         var y = 3.0f * Mathf.Cos(rad);
         gameObject.transform.position = target.position + new Vector3(x, y);
+        WeaponAngle = Mathf.Atan2(aim.y, aim.x) * Mathf.Rad2Deg;
     }
 }
