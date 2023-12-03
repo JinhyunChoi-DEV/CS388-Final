@@ -3,18 +3,23 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
-
+using UnityEngine.AI;
 public class Boss : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject Player;
     public GameObject Bullet;
-
+    public Transform bulletStartTransform;
+    private NavMeshAgent agent;
     private Vector2 DirToPlayer;
     private Vector2 Speed = new Vector2(2f, 2f);
     private float Talon_w_time =0.3f;
     void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+
         DirToPlayer = (Player.gameObject.transform.position - gameObject.transform.position);
         Talon_W();
     }
@@ -23,6 +28,8 @@ public class Boss : MonoBehaviour
     void Update()
     {
         DirToPlayer = (Player.gameObject.transform.position - gameObject.transform.position);
+        // agent.SetDestination(Player.gameObject.transform.position);'
+        //Talon_W();
     }
 
     void Zeri_Q()
@@ -40,7 +47,7 @@ public class Boss : MonoBehaviour
             Vector2 originalDirection = DirToPlayer.normalized;
             Vector2 direction = RotateVector2D(originalDirection, (angle * i) - 15f);
 
-            GameObject bullet_ = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+            GameObject bullet_ = Instantiate(Bullet, bulletStartTransform.position, Quaternion.identity);
             Rigidbody2D bulletRigidbody = bullet_.GetComponent<Rigidbody2D>();
             bulletRigidbody.velocity = direction.normalized * new Vector2(20f, 20f);
 
