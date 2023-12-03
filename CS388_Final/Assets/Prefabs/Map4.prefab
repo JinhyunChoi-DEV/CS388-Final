@@ -12810,7 +12810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7228436901226356639, guid: b3342ecd8b6cc374ab47e440500b6b90, type: 3}
       propertyPath: m_Name
-      value: Grid Variant
+      value: Map4
       objectReference: {fileID: 0}
     - target: {fileID: 8464295565125873734, guid: b3342ecd8b6cc374ab47e440500b6b90, type: 3}
       propertyPath: m_Size.x

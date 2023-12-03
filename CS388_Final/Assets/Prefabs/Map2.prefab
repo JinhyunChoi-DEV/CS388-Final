@@ -5658,7 +5658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1741840594303102617, guid: d5a03db7ae59c8b4cabe10d359c01f17, type: 3}
       propertyPath: m_Name
-      value: Grid Variant
+      value: Map2
       objectReference: {fileID: 0}
     - target: {fileID: 2325791680297028266, guid: d5a03db7ae59c8b4cabe10d359c01f17, type: 3}
       propertyPath: m_LocalPosition.x
