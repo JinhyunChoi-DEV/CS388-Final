@@ -18,8 +18,6 @@ public class Gun : MonoBehaviour
     public float CameraShakeValue;
     public int CurrentBulletCount { get; private set; }
     public bool WaitReload { private set; get; }
-    private float fireTimer;
-    private float reloadTimer;
     private bool isInfiniteBullet;
     private bool waitFireDelay;
     private bool canFire => CurrentBulletCount > 0 && WaitReload == false && state.State != State.Dodge && waitFireDelay != true;
@@ -39,15 +37,12 @@ public class Gun : MonoBehaviour
 
         waitFireDelay = false;
         WaitReload = false;
-        fireTimer = 0.0f;
-        reloadTimer = 0.0f;
     }
 
     void Start()
     {
         CurrentBulletCount = MaxBulletCount;
         isInfiniteBullet = TotalBullets == -1;
-        fireTimer = 0.0f;
 
         waitFireDelay = false;
         WaitReload = false;
@@ -56,6 +51,9 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
+        if (!PlayerData.IsAlive)
+            return;
+
         if (PlayerInput.Instance.InputData.Fire && canFire)
             Fire();
 

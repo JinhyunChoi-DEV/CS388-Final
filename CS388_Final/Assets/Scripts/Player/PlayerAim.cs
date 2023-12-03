@@ -19,6 +19,9 @@ public class PlayerAim : MonoBehaviour
 
     void Update()
     {
+        if (!PlayerData.IsAlive)
+            return;
+
         if (PlayerInput.Instance.IsController)
             UpdateByController();
         else

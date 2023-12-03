@@ -35,6 +35,14 @@ public class PlayerWeapon : MonoBehaviour
 
     void Update()
     {
+        if (!PlayerData.IsAlive)
+        {
+            pistol.gameObject.SetActive(false);
+            rifle.gameObject.SetActive(false);
+            sniper.gameObject.SetActive(false);
+            return;
+        }
+
         var switchGun = PlayerInput.Instance.InputData.SwitchGun;
 
         var currentGun = GetCurrentGun();

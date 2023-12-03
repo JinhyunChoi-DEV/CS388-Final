@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     [SerializeField] private PlayerState state;
+    public static bool IsAlive { get; private set; }
     public float CurrentHP { get; private set; }
     public float MaxHP;
     public float DodgeSpeed;
@@ -12,9 +13,9 @@ public class PlayerData : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-
     {
         CurrentHP = MaxHP;
+        IsAlive = true;
 
         ignoreDamageCollision = false;
     }
@@ -28,6 +29,7 @@ public class PlayerData : MonoBehaviour
 
         if (CurrentHP <= 0)
         {
+            IsAlive = false;
             //TODO: Dead
         }
 

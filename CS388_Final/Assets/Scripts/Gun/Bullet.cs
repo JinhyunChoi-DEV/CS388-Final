@@ -4,7 +4,7 @@ using UnityEngine.Pool;
 
 public class Bullet : MonoBehaviour
 {
-    public Rigidbody2D rigidbody;
+    public Rigidbody2D rb;
     private ObjectPool<Bullet> pool;
     private float liveTime = 10.0f;
     private bool isRelease;
@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
     public void Fire(Vector2 dir, float speed)
     {
         isRelease = false;
-        rigidbody.velocity = dir * speed;
+        rb.velocity = dir * speed;
     }
 
     public void SetPool(ObjectPool<Bullet> pool)

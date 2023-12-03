@@ -1,4 +1,4 @@
-using System;
+using nn.hid;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
@@ -19,6 +19,10 @@ public class PlayerInput : MonoBehaviour
     public bool IsController => (ForcedPC != true) && controllerInput == true;
 
     private bool controllerInput;
+    private NpadId npadId = NpadId.Invalid;
+    private NpadState npadState = new NpadState();
+    private bool lTriggerUsed = false;
+    private bool rTriggerUsed = false;
 
     private void Awake()
     {
@@ -32,6 +36,13 @@ public class PlayerInput : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        Npad.Initialize();
+        Npad.SetSupportedIdType(new NpadId[] { NpadId.Handheld, NpadId.No1 });
+        Npad.SetSupportedStyleSet(NpadStyle.FullKey | NpadStyle.Handheld | NpadStyle.JoyDual);
     }
 
     // Update is called once per frame
@@ -49,17 +60,35 @@ public class PlayerInput : MonoBehaviour
 
     private void UpdateSwitchInput()
     {
+        PlayerInputData newInput = new PlayerInputData();
+        var style = Npad.GetStyleSet(NpadId.Handheld);
+        Npad.GetState(ref npadState, npadId, style);
 
+        newInput.MoveDir = new Vector2(npadState.analogStickL.fx, npadState.analogStickL.fy);
+        newInput.Aim = new Vector2(npadState.analogStickR.fx, npadState.analogStickR.fy);
+        newInput.Fire = npadState.GetButton(NpadButton.L);
+        newInput.Dodge = npadState.GetButtonDown(NpadButton.R);
+        newInput.Reload = npadState.GetButtonDown(NpadButton.ZL);
+        newInput.SwitchGun = npadState.GetButtonDown(NpadButton.ZR);
+
+        InputData = newInput;
     }
 
     private void UpdatePCInput()
     {
         var usedGamepad = false;
 
-        if (Input.GetJoystickNames().Length == 0)
+        if (ForcedPC)
+        {
             usedGamepad = false;
+        }
         else
-            usedGamepad = Input.GetJoystickNames()[0] != string.Empty;
+        {
+            if (Input.GetJoystickNames().Length == 0)
+                usedGamepad = false;
+            else
+                usedGamepad = Input.GetJoystickNames()[0] != string.Empty;
+        }
 
         controllerInput = usedGamepad;
         PlayerInputData newInput = new PlayerInputData();
@@ -73,8 +102,27 @@ public class PlayerInput : MonoBehaviour
             newInput.Aim = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
             newInput.Dodge = Input.GetButtonDown("Dodge");
             newInput.Fire = Input.GetButton("Fire");
-            newInput.Reload = Input.GetButtonDown("Reload");
-            newInput.SwitchGun = Input.GetButtonDown("SwitchGun");
+            if (!lTriggerUsed && Input.GetAxis("Reload") >= 0.9f)
+            {
+                newInput.Reload = true;
+                lTriggerUsed = true;
+            }
+            else if (lTriggerUsed && Input.GetAxis("Reload") == 0f)
+            {
+                newInput.Reload = false;
+                lTriggerUsed = false;
+            }
+
+            if (!rTriggerUsed && Input.GetAxis("SwitchGun") >= 0.9f)
+            {
+                newInput.SwitchGun = true;
+                rTriggerUsed = true;
+            }
+            else if (rTriggerUsed && Input.GetAxis("SwitchGun") == 0f)
+            {
+                newInput.SwitchGun = false;
+                rTriggerUsed = false;
+            }
         }
         else
         {
