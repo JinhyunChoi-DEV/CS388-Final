@@ -6,6 +6,22 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/DigipenLogo.unity
+    guid: 5b59e121c8f505c438be77d310301075
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: ab27037c02cbd3445bda547c96fd675b
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Boss.unity
+    guid: e298caf9cacaa5c4fa7f9ac5298cdc6d
+  - enabled: 1
+    path: Assets/Scenes/Character_Test.unity
+    guid: 342c9fcef88b9aa4daf09875ebc8dc06
+  - enabled: 1
+    path: Assets/Scenes/MapGenerate.unity
+    guid: d366ab6291d8f1748841f80f70400dea
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
