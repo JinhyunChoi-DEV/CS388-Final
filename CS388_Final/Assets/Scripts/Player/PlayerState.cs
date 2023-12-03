@@ -13,7 +13,7 @@ public class PlayerState : MonoBehaviour
     public State State { get; private set; }
 
     private bool canDodge;
-    private float dodgeTime = 0.35f;
+    private float dodgeTime = 0.4f;
     private float timer = 0.0f;
 
     void Start()

@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -5,16 +7,20 @@ using UnityEngine.UI;
 
 public class PlayerWinUI : MonoBehaviour
 {
+    public GameObject Panel;
     [SerializeField] private Button menu;
     [SerializeField] private Button quit;
 
-    void Start()
+    public void SetButtonSelect()
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(menu.gameObject);
+    }
 
+    void Start()
+    {
         menu.onClick.AddListener(MainMenu);
-        quit.onClick.AddListener(() => Application.Quit());
+        quit.onClick.AddListener(Quit);
     }
 
     void MainMenu()
@@ -22,5 +28,14 @@ public class PlayerWinUI : MonoBehaviour
         IngameManager.IsDead = false;
         IngameManager.IsWin = false;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    void Quit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
     }
 }

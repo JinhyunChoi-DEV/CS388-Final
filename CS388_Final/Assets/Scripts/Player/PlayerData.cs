@@ -2,22 +2,29 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
+    public RemainEnemyUI RemainEnemy;
+
     [SerializeField] private PlayerState state;
+    [SerializeField] private PlayerHP hpUI;
     public static bool IsAlive { get; private set; }
-    public float CurrentHP { get; private set; }
-    public float MaxHP;
+    public int MaxHP;
     public float DodgeSpeed;
     public float WalkSpeed;
 
-    private bool ignoreDamageCollision;
+    public bool IgnoreDamageCollision { get; private set; }
+    private float currentHP;
 
-    // Start is called before the first frame update
+    void Awake()
+    {
+        hpUI.SetMaxHP(MaxHP);
+    }
+
     void Start()
     {
-        CurrentHP = MaxHP;
+        currentHP = MaxHP;
         IsAlive = true;
 
-        ignoreDamageCollision = false;
+        IgnoreDamageCollision = false;
     }
 
     // Update is called once per frame
@@ -27,23 +34,23 @@ public class PlayerData : MonoBehaviour
             ApplyDamage();
 
 
-        if (CurrentHP <= 0)
+        if (currentHP <= 0)
         {
             IsAlive = false;
-            //TODO: Dead
         }
 
-        ignoreDamageCollision = state.State == State.Dodge;
+        IgnoreDamageCollision = state.State == State.Dodge;
     }
 
     public void ApplyDamage()
     {
-        if (CurrentHP <= 0)
+        if (currentHP <= 0)
             return;
 
-        if (ignoreDamageCollision)
+        if (IgnoreDamageCollision)
             return;
 
-        CurrentHP -= 0.5f;
+        currentHP -= 0.5f;
+        hpUI.UpdateHP(currentHP);
     }
 }

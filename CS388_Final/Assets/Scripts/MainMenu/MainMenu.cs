@@ -1,39 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
-namespace Paparazzi
+public class MainMenu : MonoBehaviour
 {
-    public class MainMenu : MonoBehaviour
+    public Button startButton;
+
+    void Start()
     {
-        public Button startButton;
+        EventSystem.current.SetSelectedGameObject(startButton.gameObject);
+    }
 
-        void Start()
-        {
-            EventSystem.current.SetSelectedGameObject(startButton.gameObject);
-        }
+    // Update is called once per frame
+    void Update()
+    {
+    }
 
-        // Update is called once per frame
-        void Update()
-        {
-        }
+    public void OnClickStart()
+    {
+        SceneManager.LoadScene("PlayableScene");
+    }
 
-        public void OnClickStart()
-        {
-            SceneManager.LoadScene("PlayableScene");
-        }
-
-        public void OnClickEnd()
-        {
+    public void OnClickEnd()
+    {
 #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
+        UnityEditor.EditorApplication.isPlaying = false;
 #else
             Application.Quit();
 #endif
-        }
     }
 }

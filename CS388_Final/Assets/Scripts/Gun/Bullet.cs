@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     private ObjectPool<Bullet> pool;
     private float liveTime = 10.0f;
     private bool isRelease;
+    private float damage = 0;
 
     private void Start()
     {
@@ -15,6 +16,10 @@ public class Bullet : MonoBehaviour
         StartCoroutine(DeactiveAfterTime());
     }
 
+    public void SetDamage(float damage)
+    {
+        this.damage = damage;
+    }
     public void Fire(Vector2 dir, float speed)
     {
         isRelease = false;
@@ -38,28 +43,24 @@ public class Bullet : MonoBehaviour
         Release();
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Enemy")
-        {
-
-        }
-        else
-        {
-            Release();
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.tag == "Player")
+            return;
+
+        if (other.gameObject.tag == "Bullet")
+            return;
+
         if (other.gameObject.tag == "Enemy")
         {
+            var enemy = other.GetComponent<Enemy>();
+            if (enemy.IsDead)
+                return;
 
+            enemy.ApplyDamage(damage);
         }
-        else
-        {
-            Release();
-        }
+
+        Release();
     }
 
     private void Release()

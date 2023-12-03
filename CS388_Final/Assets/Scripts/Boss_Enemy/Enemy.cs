@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Pool;
-using UnityEngine.UI;
+
 public class Enemy : MonoBehaviour
 {
     public EnemyBullet bulletPrefab;
@@ -11,9 +11,13 @@ public class Enemy : MonoBehaviour
     public float FireTime;
     public float MinDistanceToPlayer = 8;
     public NavMeshAgent agent;
-
+    public Transform targetTransform;
+    public Transform bar;
     public LayerMask obstacleLayer;
-    public Slider hpbar;
+
+    public bool IsMove { get; private set; }
+    public bool IsDead { get; private set; }
+
     private Vector2 DirToPlayer;
     private float CurHp = 100f;
     private float MaxHP = 100f;
@@ -23,6 +27,11 @@ public class Enemy : MonoBehaviour
     private bool isFirstShoot = true;
     private bool canFire;
     private Coroutine fireCoroutine = null;
+
+    public void DestroyObject()
+    {
+        Destroy(gameObject);
+    }
 
     void Start()
     {
@@ -39,18 +48,25 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (!PlayerData.IsAlive)
+            return;
+
+        if (CurHp <= 0)
+        {
+            IsDead = true;
+            return;
+        }
+
         DirToPlayer = (player.transform.position - transform.position);
 
-        float deg = Mathf.Atan2(DirToPlayer.y, DirToPlayer.x) * Mathf.Rad2Deg;
-        Debug.Log(deg);
-
-        hpbar.value = CurHp / MaxHP;
+        RotateTransform();
 
         float distanceToPlayer = DirToPlayer.magnitude;
 
         if (distanceToPlayer > MinDistanceToPlayer)
         {
             agent.SetDestination(player.transform.position);
+            IsMove = true;
         }
         else
         {
@@ -58,19 +74,30 @@ public class Enemy : MonoBehaviour
             {
                 UpdateFire();
                 agent.ResetPath();
+                IsMove = false;
             }
             else
             {
                 agent.SetDestination(player.transform.position);
+                IsMove = true;
             }
         }
 
-        if (CurHp <= 0)
-        {
-            //TODO delete corutine
-            Destroy(gameObject);
-        }
+    }
 
+    private void UpdateHealth()
+    {
+        var t = CurHp / MaxHP;
+        var newSize = Mathf.Lerp(0, 1, t);
+
+        bar.localScale = new Vector3(newSize, 1);
+    }
+
+    private void RotateTransform()
+    {
+        float deg = Mathf.Atan2(DirToPlayer.y, DirToPlayer.x) * Mathf.Rad2Deg;
+        var newAngle = Mathf.Abs(deg) <= 90 ? 0 : 180.0f;
+        targetTransform.transform.localRotation = Quaternion.Euler(0, newAngle, 0);
     }
 
     void UpdateFire()
@@ -141,12 +168,16 @@ public class Enemy : MonoBehaviour
         Destroy(bullet.gameObject);
     }
 
-
-    void OnCollisionEnter2D(Collision2D collision)
+    public void ApplyDamage(float damage)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Bullet"))
+        CurHp -= damage;
+        if (CurHp <= 0)
         {
-            CurHp -= 20;
+            MapData.RemainEnemy -= 1;
+            if (fireCoroutine != null)
+                StopCoroutine(fireCoroutine);
+            fireCoroutine = null;
         }
+        UpdateHealth();
     }
 }

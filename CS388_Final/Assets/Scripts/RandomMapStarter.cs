@@ -17,7 +17,6 @@ public class RandomMapStarter : MonoBehaviour
         }
         RandNum = Random.Range(0, mapList.Count);
         mapList[RandNum].gameObject.SetActive(true);
-        mapList[RandNum].transform.position = new Vector3(0, 0, 3);
 
         bossMap.gameObject.SetActive(false);
     }
@@ -26,7 +25,7 @@ public class RandomMapStarter : MonoBehaviour
     void Start()
     {
         var player = GameObject.Find("Player");
-        mapList[RandNum].SpawnPlayer(player.transform);
+        mapList[RandNum].SpawnPlayer(player);
     }
 
     // Update is called once per frame

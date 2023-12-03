@@ -27,9 +27,7 @@ public class EnemyBullet : MonoBehaviour
     }
 
     void Update()
-    {
-
-    }
+    { }
 
     IEnumerator DeactiveAfterTime()
     {
@@ -50,5 +48,25 @@ public class EnemyBullet : MonoBehaviour
             isRelease = true;
             pool.Release(this);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Enemy")
+            return;
+
+        if (other.gameObject.tag == "Bullet")
+            return;
+
+        if (other.gameObject.tag == "Player")
+        {
+            var data = other.GetComponent<PlayerData>();
+            if (data.IgnoreDamageCollision)
+                return;
+
+            data.ApplyDamage();
+        }
+
+        Release();
     }
 }

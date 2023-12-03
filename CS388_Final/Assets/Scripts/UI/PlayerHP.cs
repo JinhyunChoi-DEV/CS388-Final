@@ -4,44 +4,46 @@ using UnityEngine.UI;
 
 public class PlayerHP : MonoBehaviour
 {
-    [SerializeField] private PlayerData data;
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite halfHeart;
     [SerializeField] private GameObject root;
     [SerializeField] private GameObject deadImage;
     [SerializeField] private Image prefab;
 
+    private int MaxHP;
     private List<Image> hpObjects = new List<Image>();
+
+    public void SetMaxHP(int maxHP)
+    {
+        MaxHP = maxHP;
+    }
+
+    public void UpdateHP(float currentHP)
+    {
+        UpdateCurrentHealth(currentHP);
+        root.gameObject.SetActive(currentHP > 0);
+        deadImage.gameObject.SetActive(currentHP <= 0);
+    }
 
     void Start()
     {
         prefab.gameObject.SetActive(false);
 
-        for (int i = 0; i < data.MaxHP; ++i)
+        for (int i = 0; i < MaxHP; ++i)
         {
             var newHeart = Instantiate(prefab, root.transform);
             newHeart.gameObject.SetActive(true);
             hpObjects.Add(newHeart);
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        var currentHP = data.CurrentHP;
-
-        if (currentHP > 0)
-            UpdateCurrentHealth(currentHP);
-
-        root.gameObject.SetActive(currentHP > 0);
-        deadImage.gameObject.SetActive(currentHP <= 0);
+        UpdateHP(MaxHP);
     }
 
     void UpdateCurrentHealth(float currentHP)
     {
         var existDecimal = false;
         var roundHP = GetRoundInt(currentHP, ref existDecimal);
-        for (int i = 0; i < data.MaxHP; ++i)
+        for (int i = 0; i < MaxHP; ++i)
         {
             var targetIndex = i + 1;
             hpObjects[i].gameObject.SetActive(targetIndex <= roundHP);

@@ -93,6 +93,7 @@ public class Gun : MonoBehaviour
         bullet.transform.rotation = angleQ;
         bullet.gameObject.SetActive(true);
         bullet.Fire(dir, BulletSpeed);
+        bullet.SetDamage(Damage);
     }
 
     private void Return(Bullet bullet)
