@@ -21,6 +21,9 @@ public class PlayerData : MonoBehaviour
 
     void Start()
     {
+        if (Application.platform != RuntimePlatform.Switch)
+            Cursor.visible = false;
+
         currentHP = MaxHP;
         IsAlive = true;
 

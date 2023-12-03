@@ -58,6 +58,9 @@ public class EnemyBullet : MonoBehaviour
         if (other.gameObject.tag == "Bullet")
             return;
 
+        if (other.gameObject.tag == "Trigger")
+            return;
+
         if (other.gameObject.tag == "Player")
         {
             var data = other.GetComponent<PlayerData>();

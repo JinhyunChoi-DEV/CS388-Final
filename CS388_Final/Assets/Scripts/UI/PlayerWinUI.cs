@@ -13,6 +13,9 @@ public class PlayerWinUI : MonoBehaviour
 
     public void SetButtonSelect()
     {
+        if (Application.platform != RuntimePlatform.Switch)
+            Cursor.visible = true;
+
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(menu.gameObject);
     }

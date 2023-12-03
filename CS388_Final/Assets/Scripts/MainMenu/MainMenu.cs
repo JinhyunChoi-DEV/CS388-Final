@@ -8,6 +8,9 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
+        if (Application.platform != RuntimePlatform.Switch)
+            Cursor.visible = true;
+
         EventSystem.current.SetSelectedGameObject(startButton.gameObject);
     }
 

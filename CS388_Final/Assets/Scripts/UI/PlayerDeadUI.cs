@@ -14,6 +14,9 @@ public class PlayerDeadUI : MonoBehaviour
 
     public void SetButtonSelect()
     {
+        if (Application.platform != RuntimePlatform.Switch)
+            Cursor.visible = true;
+
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(restart.gameObject);
     }
