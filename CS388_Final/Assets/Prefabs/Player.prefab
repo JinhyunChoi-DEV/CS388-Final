@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 696179923021351418}
   - component: {fileID: 4903961511903556577}
   - component: {fileID: 6087392005210711166}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rifleBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 3962802143022041466}
   - component: {fileID: 3085908730205135386}
   - component: {fileID: 7023656924260397092}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sniperBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -899,7 +899,7 @@ GameObject:
   - component: {fileID: 2702583148633287740}
   - component: {fileID: 3439884950373530315}
   - component: {fileID: 9204072573300613039}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pistolBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1136,7 +1136,7 @@ GameObject:
   - component: {fileID: 6455774747104143128}
   - component: {fileID: 2748019311654694261}
   - component: {fileID: 8806216689705902999}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}

@@ -212,7 +212,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sniperBullet_0: -1017804271438837554
+      sniperBullet_1: -389880789904772307
+      sniperBullet_2: 920140157958740252
+      sniperBullet_3: -7662310757074953156
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
