@@ -46,7 +46,7 @@ public class Gun : MonoBehaviour
 
         waitFireDelay = false;
         WaitReload = false;
-        pool = new ObjectPool<Bullet>(CreateBullet, OnTakeBulletFromPool, OnReturnBulletToPool, OnDestroyBullet, true, 100, 200);
+        pool = new ObjectPool<Bullet>(CreateBullet, Create, Return, Delete, true, 100, 200);
     }
 
     void Update()
@@ -82,7 +82,7 @@ public class Gun : MonoBehaviour
         return newBullet;
     }
 
-    private void OnTakeBulletFromPool(Bullet bullet)
+    private void Create(Bullet bullet)
     {
         var angle = aim.WeaponAngle;
         var aimAngle = aim.Angle;
@@ -95,12 +95,12 @@ public class Gun : MonoBehaviour
         bullet.Fire(dir, BulletSpeed);
     }
 
-    private void OnReturnBulletToPool(Bullet bullet)
+    private void Return(Bullet bullet)
     {
         bullet.gameObject.SetActive(false);
     }
 
-    private void OnDestroyBullet(Bullet bullet)
+    private void Delete(Bullet bullet)
     {
         Destroy(bullet.gameObject);
     }

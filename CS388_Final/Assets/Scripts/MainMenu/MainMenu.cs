@@ -1,47 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Paparazzi
 {
     public class MainMenu : MonoBehaviour
     {
-        //public AudioClip Button_Clip;
-        // Start is called before the first frame update
+        public Button startButton;
+
         void Start()
         {
-            //Cursor.lockState = CursorLockMode.None;
-            //Cursor.visible = true;
+            EventSystem.current.SetSelectedGameObject(startButton.gameObject);
         }
 
         // Update is called once per frame
         void Update()
         {
-            if(Input.GetKeyDown(KeyCode.A))
-            {
-                SceneManager.LoadScene("MapGenerate");
-            }
-        }
-        public void OnClickStart()
-        {
-            //SoundManager.instance.SFXPlay("Button", Button_Clip);
-            SceneManager.LoadScene("MapGenerate");
-        }
-        public void OnClickOption()
-        {
-            //SoundManager.instance.SFXPlay("Button", Button_Clip);
-            SceneManager.LoadScene("Test_PhotoFeature");
         }
 
-        public void OnClickTestLevel()
+        public void OnClickStart()
         {
-            //SoundManager.instance.SFXPlay("Button", Button_Clip);
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("PlayableScene");
         }
+
         public void OnClickEnd()
         {
-            //SoundManager.instance.SFXPlay("Button", Button_Clip);
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
 #else

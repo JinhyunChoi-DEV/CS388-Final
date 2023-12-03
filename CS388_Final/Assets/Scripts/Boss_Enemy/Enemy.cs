@@ -1,30 +1,48 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Pool;
 using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
-    public GameObject Player;
-    public GameObject bullet;
+    public EnemyBullet bulletPrefab;
+    public Transform firePosition;
+    public float BulletSpeed;
+    public float FireTime;
+    public float MinDistanceToPlayer = 8;
+    public NavMeshAgent agent;
+
     public LayerMask obstacleLayer;
-    private NavMeshAgent agent;
     public Slider hpbar;
     private Vector2 DirToPlayer;
-    private float MinDistanceToPlayer = 8;
-    private float timer = 0;
     private float CurHp = 100f;
     private float MaxHP = 100f;
+
+    private GameObject player;
+    private ObjectPool<EnemyBullet> pool;
+    private bool isFirstShoot = true;
+    private bool canFire;
+    private Coroutine fireCoroutine = null;
+
     void Start()
     {
+        player = GameObject.Find("Player");
+        bulletPrefab.gameObject.SetActive(false);
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
+        canFire = true;
+        isFirstShoot = true;
+        pool = new ObjectPool<EnemyBullet>(CreateBullet, Create, Return, Delete, true, 10, 20);
     }
 
     void Update()
     {
-        DirToPlayer = (Player.transform.position - transform.position);
+        DirToPlayer = (player.transform.position - transform.position);
+
+        float deg = Mathf.Atan2(DirToPlayer.y, DirToPlayer.x) * Mathf.Rad2Deg;
+        Debug.Log(deg);
 
         hpbar.value = CurHp / MaxHP;
 
@@ -32,44 +50,64 @@ public class Enemy : MonoBehaviour
 
         if (distanceToPlayer > MinDistanceToPlayer)
         {
-            agent.SetDestination(Player.transform.position);
+            agent.SetDestination(player.transform.position);
         }
         else
         {
-            if (IsObstacleBetweenEnemyAndPlayer() == false)
+            if (!IsObstacleBetweenEnemyAndPlayer())
             {
-                timer += Time.deltaTime;
-                if (timer > 2f)
-                {
-                    GenerateBullet();
-                    timer = 0;
-                }
+                UpdateFire();
                 agent.ResetPath();
             }
             else
             {
-                agent.SetDestination(Player.transform.position);
+                agent.SetDestination(player.transform.position);
             }
         }
 
-        if(CurHp <= 0)
+        if (CurHp <= 0)
         {
+            //TODO delete corutine
             Destroy(gameObject);
         }
 
     }
 
-    void GenerateBullet()
+    void UpdateFire()
     {
-        GameObject bullet_ = Instantiate(bullet, gameObject.transform);
-        bullet_.transform.rotation = Quaternion.FromToRotation(Vector3.up, DirToPlayer);
-        bullet_.GetComponent<Rigidbody2D>().velocity = new Vector2(10f, 10f) * DirToPlayer.normalized;
+        if (!canFire)
+            return;
+
+        if (isFirstShoot)
+        {
+            Fire();
+            isFirstShoot = false;
+        }
+        else
+        {
+            fireCoroutine = StartCoroutine(FireHandling());
+        }
+    }
+
+    IEnumerator FireHandling()
+    {
+        canFire = false;
+
+        yield return new WaitForSeconds(FireTime);
+
+        Fire();
+        canFire = true;
+    }
+
+    void Fire()
+    {
+        pool.Get();
     }
 
     bool IsObstacleBetweenEnemyAndPlayer()
     {
         float distanceToPlayer = DirToPlayer.magnitude;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, (Player.transform.position - transform.position).normalized, distanceToPlayer, obstacleLayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, (player.transform.position - transform.position).normalized, distanceToPlayer, obstacleLayer);
 
         if (hit.collider != null)
         {
@@ -77,6 +115,32 @@ public class Enemy : MonoBehaviour
         }
         return false;
     }
+
+    private EnemyBullet CreateBullet()
+    {
+        EnemyBullet newBullet = Instantiate(bulletPrefab, firePosition.position, Quaternion.identity);
+        newBullet.SetPool(pool);
+        return newBullet;
+    }
+
+    private void Create(EnemyBullet bullet)
+    {
+        bullet.transform.position = firePosition.position;
+        bullet.transform.rotation = Quaternion.identity;
+        bullet.gameObject.SetActive(true);
+        bullet.Fire(DirToPlayer.normalized, BulletSpeed);
+    }
+
+    private void Return(EnemyBullet bullet)
+    {
+        bullet.gameObject.SetActive(false);
+    }
+
+    private void Delete(EnemyBullet bullet)
+    {
+        Destroy(bullet.gameObject);
+    }
+
 
     void OnCollisionEnter2D(Collision2D collision)
     {
