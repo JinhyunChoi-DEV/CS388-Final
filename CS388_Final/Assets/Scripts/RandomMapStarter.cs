@@ -5,38 +5,33 @@ using UnityEngine;
 
 public class RandomMapStarter : MonoBehaviour
 {
-    public List<GameObject> mapList = new List<GameObject>();
-    public GameObject bossMap;
+    public List<MapData> mapList = new List<MapData>();
+    public MapData bossMap;
     private int RandNum = 0;
 
+    void Awake()
+    {
+        for (int i = 0; i < mapList.Count; i++)
+        {
+            mapList[i].gameObject.SetActive(false);
+        }
+        RandNum = Random.Range(0, mapList.Count);
+        mapList[RandNum].gameObject.SetActive(true);
+        mapList[RandNum].transform.position = new Vector3(0, 0, 3);
+
+        bossMap.gameObject.SetActive(false);
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < mapList.Count; i++)
-        {
-            mapList[i].SetActive(false);
-        }
-        RandNum = Random.Range(0, mapList.Count);
-        mapList[RandNum].SetActive(true);
-        mapList[RandNum].transform.position = new Vector3(0, 0, 0);
+        var player = GameObject.Find("Player");
+        mapList[RandNum].SpawnPlayer(player.transform);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
-//Sec += Time.deltaTime;
-//if (Sec > 1)
-//{
-//    RandNum = Random.Range(0, projectile.Count);
-
-//    var _projectile = Instantiate(projectile[RandNum], launchPoint.position, launchPoint.rotation);
-
-//    Fire_Sound.Play();
-
-//    _projectile.GetComponent<Rigidbody>().velocity = -launchPoint.right * launchVelocity;
-//    Sec = 0;
-//}

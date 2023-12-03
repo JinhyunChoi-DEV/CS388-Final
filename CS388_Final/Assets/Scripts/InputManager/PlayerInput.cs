@@ -19,7 +19,7 @@ public class PlayerInput : MonoBehaviour
     public bool IsController => (ForcedPC != true) && controllerInput == true;
 
     private bool controllerInput;
-    private NpadId npadId = NpadId.Invalid;
+    private NpadId npadId = NpadId.Handheld;
     private NpadState npadState = new NpadState();
     private bool lTriggerUsed = false;
     private bool rTriggerUsed = false;
