@@ -51386,7 +51386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6226406078575022165, guid: cfc4fc8e3c10a404998be3c552ce2f08, type: 3}
       propertyPath: m_Name
-      value: Grid Variant
+      value: BigRoom
       objectReference: {fileID: 0}
     - target: {fileID: 7926967192777618534, guid: cfc4fc8e3c10a404998be3c552ce2f08, type: 3}
       propertyPath: m_LocalPosition.x

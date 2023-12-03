@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 383202423859468970, guid: 2f8901ef17edc1e4cad8dc1ef4471803, type: 3}
       propertyPath: m_Name
-      value: Grid Variant
+      value: Map3
       objectReference: {fileID: 0}
     - target: {fileID: 1474592952145130867, guid: 2f8901ef17edc1e4cad8dc1ef4471803, type: 3}
       propertyPath: m_Size.x

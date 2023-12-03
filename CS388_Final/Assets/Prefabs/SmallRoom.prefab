@@ -8,6 +8,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 381382303090421502, guid: 1a83665b0308a8740a65e84cb494a8c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 381382303090421502, guid: 1a83665b0308a8740a65e84cb494a8c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 381382303090421502, guid: 1a83665b0308a8740a65e84cb494a8c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 381382303090421502, guid: 1a83665b0308a8740a65e84cb494a8c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 381382303090421502, guid: 1a83665b0308a8740a65e84cb494a8c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4224020615933982086, guid: 1a83665b0308a8740a65e84cb494a8c8, type: 3}
       propertyPath: m_Size.x
       value: 20
@@ -12822,7 +12842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7203592085758796188, guid: 1a83665b0308a8740a65e84cb494a8c8, type: 3}
       propertyPath: m_Name
-      value: Grid Variant
+      value: SmallRoom
       objectReference: {fileID: 0}
     - target: {fileID: 8277592188408696389, guid: 1a83665b0308a8740a65e84cb494a8c8, type: 3}
       propertyPath: m_Size.x
