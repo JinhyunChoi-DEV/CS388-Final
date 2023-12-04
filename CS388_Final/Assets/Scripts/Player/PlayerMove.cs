@@ -8,6 +8,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private PlayerData data;
     private Vector2 dir;
 
+    public AudioClip Dodge_Clip;
+
     void Start()
     { }
 
@@ -31,6 +33,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (state.State == State.Dodge)
         {
+            SoundManager.instance.SFXPlay("Dodge", Dodge_Clip);
             var aimAngle = aim.Angle;
             dir = new Vector2(Mathf.Sin(aimAngle * Mathf.Deg2Rad), Mathf.Cos(aimAngle * Mathf.Deg2Rad)).normalized;
         }

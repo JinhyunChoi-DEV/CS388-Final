@@ -15,6 +15,9 @@ public class PlayerData : MonoBehaviour
     public bool IgnoreDamageCollision { get; private set; }
     private float currentHP;
 
+    public AudioClip Damaged_Clip;
+    public AudioClip Death_Clip;
+
     void Awake()
     {
         hpUI.SetMaxHP(MaxHP);
@@ -38,8 +41,9 @@ public class PlayerData : MonoBehaviour
             ApplyDamage();
 
 
-        if (currentHP <= 0)
+        if (IsAlive==true && currentHP <= 0)
         {
+            SoundManager.instance.SFXPlay("Death", Death_Clip);
             IsAlive = false;
         }
 
@@ -54,6 +58,7 @@ public class PlayerData : MonoBehaviour
         if (IgnoreDamageCollision)
             return;
 
+        SoundManager.instance.SFXPlay("Damaged", Damaged_Clip);
         currentHP -= 0.5f;
         hpUI.UpdateHP(currentHP);
     }

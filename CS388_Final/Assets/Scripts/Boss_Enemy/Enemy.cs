@@ -28,6 +28,12 @@ public class Enemy : MonoBehaviour
     private bool canFire;
     private Coroutine fireCoroutine = null;
 
+    public AudioSource Enemy_Audio;
+
+    public AudioClip Damaged_Clip;
+    public AudioClip Death_Clip;
+    public AudioClip Fire_Clip;
+
     public void DestroyObject()
     {
         MapData.RemainEnemy -= 1;
@@ -52,8 +58,9 @@ public class Enemy : MonoBehaviour
         if (!PlayerData.IsAlive)
             return;
 
-        if (CurHp <= 0)
+        if (IsDead==false && CurHp <= 0)
         {
+            Enemy_SFX("Death", Death_Clip);
             IsDead = true;
             return;
         }
@@ -129,6 +136,7 @@ public class Enemy : MonoBehaviour
 
     void Fire()
     {
+        Enemy_SFX("Fire", Fire_Clip);
         pool.Get();
     }
 
@@ -171,15 +179,30 @@ public class Enemy : MonoBehaviour
 
     public void ApplyDamage(float damage)
     {
-        CurHp -= damage;
-        if (CurHp <= 0)
+        if (CurHp > 0)
+        {
+            Enemy_SFX("Damaged", Damaged_Clip);
+            CurHp -= damage;
+        }
+        else
         {
             if (fireCoroutine != null)
                 StopCoroutine(fireCoroutine);
 
             fireCoroutine = null;
             agent.velocity = Vector3.zero;
+            Enemy_SFX("Death", Death_Clip);
         }
         UpdateHealth();
+    }
+
+    private void Enemy_SFX(string sfxName, AudioClip clip)
+    {
+        GameObject sound = new GameObject(sfxName + "Sound");
+        Enemy_Audio = sound.AddComponent<AudioSource>();
+        Enemy_Audio.clip = clip;
+        Enemy_Audio.Play();
+
+        Destroy(sound, clip.length);
     }
 }

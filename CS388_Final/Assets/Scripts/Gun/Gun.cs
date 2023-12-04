@@ -6,6 +6,7 @@ public class Gun : MonoBehaviour
 {
     [SerializeField] private PlayerState state;
     [SerializeField] private PlayerAim aim;
+    public PlayerWeapon.GunType Type;
     public GameObject Holder;
     public Bullet Bullet;
     public Transform firePosition;
@@ -26,6 +27,11 @@ public class Gun : MonoBehaviour
 
     private Coroutine fireCoroutine = null;
     private Coroutine reloadCoroutine = null;
+
+    public AudioClip Reload_Clip;
+    public AudioClip Pistol_Clip;
+    public AudioClip Rifle_Clip;
+    public AudioClip Sniper_Clip;
 
     public void ClearFlag()
     {
@@ -68,6 +74,13 @@ public class Gun : MonoBehaviour
 
         fireCoroutine = StartCoroutine(FireUpdate());
         pool.Get();
+
+        if (Type == PlayerWeapon.GunType.Pistol)
+            SoundManager.instance.SFXPlay("Pistol", Pistol_Clip);
+        else if (Type == PlayerWeapon.GunType.Rifle)
+            SoundManager.instance.SFXPlay("Rifle", Rifle_Clip);
+        else if (Type == PlayerWeapon.GunType.Sniper)
+            SoundManager.instance.SFXPlay("Sniper", Sniper_Clip);
 
         CurrentBulletCount -= 1;
         UtilsClass.ShakeCamera(CameraShakeValue, 0.1f);
@@ -114,6 +127,7 @@ public class Gun : MonoBehaviour
         if (reloadCoroutine != null)
             StopCoroutine(reloadCoroutine);
 
+        SoundManager.instance.SFXPlay("Reload", Reload_Clip);
         reloadCoroutine = StartCoroutine(ReloadBullet());
         WaitReload = true;
     }

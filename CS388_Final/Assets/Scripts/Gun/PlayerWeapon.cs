@@ -13,6 +13,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private Gun rifle;
     [SerializeField] private Gun sniper;
     public GunType CurrentGun { get; private set; }
+    public AudioClip Swap_Clip;
 
     public Gun GetCurrentGun()
     {
@@ -63,6 +64,7 @@ public class PlayerWeapon : MonoBehaviour
         else if (CurrentGun == GunType.Sniper)
             CurrentGun = GunType.Pistol;
 
+        SoundManager.instance.SFXPlay("Swap", Swap_Clip);
         UpdateCurrentGun();
     }
 

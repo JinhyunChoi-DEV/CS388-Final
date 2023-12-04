@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: {fileID: 0}
   aim: {fileID: 0}
+  Type: 2
   Holder: {fileID: 1357107724532329947}
   Bullet: {fileID: 0}
   firePosition: {fileID: 1274282445919283969}
@@ -178,6 +179,10 @@ MonoBehaviour:
   BulletSpeed: 30
   Damage: 50
   CameraShakeValue: 0.06
+  Reload_Clip: {fileID: 8300000, guid: 3c5c1d4d7b9307c458890a4beb12e4ae, type: 3}
+  Pistol_Clip: {fileID: 8300000, guid: 7d5d728b38244f04d9437fef9c1b8df5, type: 3}
+  Rifle_Clip: {fileID: 8300000, guid: 67473b5508bbdf24f80e838966a2cc3a, type: 3}
+  Sniper_Clip: {fileID: 8300000, guid: 8602b7d5cd15c1943a50aa53f171c8cf, type: 3}
 --- !u!1 &5909206131269363791
 GameObject:
   m_ObjectHideFlags: 0

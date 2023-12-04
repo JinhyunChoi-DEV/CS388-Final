@@ -2064,6 +2064,7 @@ MonoBehaviour:
   Panel: {fileID: 6086764131464436602}
   menu: {fileID: 6134197614605261603}
   quit: {fileID: 8596086651074349646}
+  Button_Clip: {fileID: 8300000, guid: 41fe389abc552ae4ea67e78dcfbfa9fb, type: 3}
 --- !u!1 &2915956251714030868
 GameObject:
   m_ObjectHideFlags: 0
@@ -2257,6 +2258,7 @@ MonoBehaviour:
   pistol: {fileID: 5578995177265582709}
   rifle: {fileID: 4973958034671828975}
   sniper: {fileID: 906609390400659935}
+  Swap_Clip: {fileID: 8300000, guid: 48eaacc193980984cbfbe1593dacb6f1, type: 3}
 --- !u!114 &3398829248763713702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4035,6 +4037,7 @@ GameObject:
   - component: {fileID: 2748019311654694261}
   - component: {fileID: 8806216689705902999}
   - component: {fileID: 3558360426830978636}
+  - component: {fileID: 683039173380582981}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -4107,6 +4110,7 @@ MonoBehaviour:
   aim: {fileID: 7970209294634267574}
   rb: {fileID: 2669409847125143393}
   data: {fileID: 8806216689705902999}
+  Dodge_Clip: {fileID: 8300000, guid: 5a618c007fe353c459f6916c3860e274, type: 3}
 --- !u!114 &2943949211344947901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4198,6 +4202,8 @@ MonoBehaviour:
   MaxHP: 10
   DodgeSpeed: 7
   WalkSpeed: 5
+  Damaged_Clip: {fileID: 8300000, guid: f3aebff15a2971c49bac005a7bc5bc9b, type: 3}
+  Death_Clip: {fileID: 8300000, guid: 803f774d6834cbd44b0949930a503283, type: 3}
 --- !u!114 &3558360426830978636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4211,6 +4217,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collider: {fileID: 6455774747104143128}
+--- !u!81 &683039173380582981
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6597664895826695612}
+  m_Enabled: 1
 --- !u!1 &6674110882720658414
 GameObject:
   m_ObjectHideFlags: 0
@@ -5201,6 +5215,7 @@ MonoBehaviour:
   restart: {fileID: 5313056437953118939}
   menu: {fileID: 7992704222009512960}
   quit: {fileID: 8359938595151838864}
+  Button_Clip: {fileID: 8300000, guid: 41fe389abc552ae4ea67e78dcfbfa9fb, type: 3}
 --- !u!1 &8627788542755590263
 GameObject:
   m_ObjectHideFlags: 0

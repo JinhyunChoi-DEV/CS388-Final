@@ -11,6 +11,8 @@ public class PlayerWinUI : MonoBehaviour
     [SerializeField] private Button menu;
     [SerializeField] private Button quit;
 
+    public AudioClip Button_Clip;
+
     public void SetButtonSelect()
     {
         if (Application.platform != RuntimePlatform.Switch)
@@ -28,6 +30,7 @@ public class PlayerWinUI : MonoBehaviour
 
     void MainMenu()
     {
+        SoundManager.instance.SFXPlay("Button", Button_Clip);
         IngameManager.IsDead = false;
         IngameManager.IsWin = false;
         SceneManager.LoadScene("MainMenu");
@@ -35,6 +38,7 @@ public class PlayerWinUI : MonoBehaviour
 
     void Quit()
     {
+        SoundManager.instance.SFXPlay("Button", Button_Clip);
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else

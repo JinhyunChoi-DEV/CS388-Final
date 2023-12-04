@@ -22,12 +22,23 @@ public class Boss : MonoBehaviour
     private bool waitFire;
     private Coroutine fireCoroutine;
 
+    public AudioSource Boss_Audio;
+
+    public AudioClip Damaged_Clip;
+    public AudioClip Death_Clip;
+    public AudioClip Samira_Clip;
+    public AudioClip Talon_Clip;
+    public AudioClip Zerry_Clip;
+
     public void ApplyDamage(float damage)
     {
+        Boss_SFX("Damaged", Damaged_Clip);
         CurrentHP -= damage;
 
         if (CurrentHP <= 0)
         {
+            Boss_SFX("Death", Death_Clip);
+
             Destroy(gameObject);
             IngameManager.IsWin = true;
         }
@@ -91,11 +102,23 @@ public class Boss : MonoBehaviour
         var r = Random.Range(0, 3);
 
         if (r == 0)
+        {
+            Boss_SFX("Zerry", Zerry_Clip);
+
             zerry.Fire(DirToPlayer);
+        }
         else if (r == 1)
+        {
+            Boss_SFX("Talon", Talon_Clip);
+
             talon.Fire(DirToPlayer);
+        }
         else
+        {
+            Boss_SFX("Samira", Samira_Clip);
+
             samira.Fire();
+        }
 
         float timer = 0;
         while (timer < FireDelay)
@@ -126,4 +149,13 @@ public class Boss : MonoBehaviour
         return false;
     }
 
+    private void Boss_SFX(string sfxName, AudioClip clip)
+    {
+        GameObject sound = new GameObject(sfxName + "Sound");
+        Boss_Audio = sound.AddComponent<AudioSource>();
+        Boss_Audio.clip = clip;
+        Boss_Audio.Play();
+
+        Destroy(sound, clip.length);
+    }
 }
