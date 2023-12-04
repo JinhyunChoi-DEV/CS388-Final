@@ -538,6 +538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 3119008767218971156, guid: 79c94e6a3ee35cd498b60d60f3f95d2c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -790,6 +794,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3347703796568588814, guid: 59e722da982f1464d8677cf4410638bf, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4855165462783580379, guid: 59e722da982f1464d8677cf4410638bf, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5847523935475539996, guid: 59e722da982f1464d8677cf4410638bf, type: 3}
