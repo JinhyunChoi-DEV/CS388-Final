@@ -820,7 +820,7 @@ MonoBehaviour:
   - {fileID: 258610956}
   - {fileID: 530553065}
   - {fileID: 1259725870}
-  bossMap: {fileID: 1475974684}
+  bossMap: {fileID: 1788270091}
 --- !u!4 &1281288928
 Transform:
   m_ObjectHideFlags: 0
@@ -904,17 +904,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 70392787}
   m_SourcePrefab: {fileID: 100100000, guid: cad77886e5883984e8ef516a2cbffa67, type: 3}
---- !u!114 &1475974684 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 321766062201157751, guid: cad77886e5883984e8ef516a2cbffa67, type: 3}
-  m_PrefabInstance: {fileID: 1475974683}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc7177851dfd4f345bd7e100d8c64c2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1475974685 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5920436509592547223, guid: cad77886e5883984e8ef516a2cbffa67, type: 3}
@@ -1047,6 +1036,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3347703796568588814, guid: 59e722da982f1464d8677cf4410638bf, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4855165462783580379, guid: 59e722da982f1464d8677cf4410638bf, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5847523935475539996, guid: 59e722da982f1464d8677cf4410638bf, type: 3}
@@ -1190,6 +1183,17 @@ MonoBehaviour:
   m_Area: 0
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &1788270091 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6510508957982679542, guid: cad77886e5883984e8ef516a2cbffa67, type: 3}
+  m_PrefabInstance: {fileID: 1475974683}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5346847329b9fee4ca2308c085408915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1919948200
 GameObject:
   m_ObjectHideFlags: 0

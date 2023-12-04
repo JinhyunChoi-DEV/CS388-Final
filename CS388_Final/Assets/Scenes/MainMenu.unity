@@ -687,6 +687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startButton: {fileID: 424466501}
+  Button_Clip: {fileID: 8300000, guid: 41fe389abc552ae4ea67e78dcfbfa9fb, type: 3}
 --- !u!114 &659299809
 MonoBehaviour:
   m_ObjectHideFlags: 0
