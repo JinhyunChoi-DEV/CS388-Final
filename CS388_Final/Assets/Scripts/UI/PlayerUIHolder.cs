@@ -23,6 +23,8 @@ public class PlayerUIHolder : MonoBehaviour
             deadUI.Panel.SetActive(true);
             deadUI.SetButtonSelect();
             isActiveEnd = true;
+
+            Time.timeScale = 0.0f;
         }
 
         if (IngameManager.IsWin && !isActiveEnd)
@@ -30,6 +32,8 @@ public class PlayerUIHolder : MonoBehaviour
             winUI.Panel.SetActive(true);
             winUI.SetButtonSelect();
             isActiveEnd = true;
+
+            Time.timeScale = 0.0f;
         }
 
         playingPanel.SetActive(!IngameManager.IsDead && !IngameManager.IsWin);

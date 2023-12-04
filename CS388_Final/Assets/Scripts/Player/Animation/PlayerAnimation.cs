@@ -27,10 +27,12 @@ public class PlayerAnimation : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0, aim.Angle < 0 ? 180 : 0, 0));
 
         animator.SetBool(deadId, !PlayerData.IsAlive);
-        animator.SetBool(dodgeId, playerState.State == State.Dodge);
+        animator.SetBool(dodgeId, playerState.State == State.Dodge || playerState.State == State.DoingDodge);
         animator.SetBool(idleId, playerState.State == State.Idle);
         animator.SetBool(moveId, playerState.State == State.Move);
-        animator.SetFloat(angle, Mathf.Abs(aim.Angle));
+
+        if (playerState.State != State.DoingDodge)
+            animator.SetFloat(angle, Mathf.Abs(aim.Angle));
     }
 
     public void DeadPlayer()

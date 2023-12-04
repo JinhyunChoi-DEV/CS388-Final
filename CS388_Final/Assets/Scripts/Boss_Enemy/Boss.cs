@@ -1,91 +1,129 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 using UnityEngine.AI;
+
 public class Boss : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject Player;
-    public GameObject Bullet;
     public Transform bulletStartTransform;
-    private NavMeshAgent agent;
+    public Transform targetTransform;
+    public float MaxHP;
+    public float MinDistanceToPlayer = 8;
+    public LayerMask obstacleLayer;
+    public NavMeshAgent Agent;
+    public Samira samira;
+    public Talon talon;
+    public Zerry zerry;
+    public float FireDelay;
+
+    public bool IsMove { get; private set; }
+    public float CurrentHP;
     private Vector2 DirToPlayer;
-    private Vector2 Speed = new Vector2(2f, 2f);
-    private float Talon_w_time =0.3f;
+    private GameObject player;
+    private bool waitFire;
+    private Coroutine fireCoroutine;
+
+    public void ApplyDamage(float damage)
+    {
+        CurrentHP -= damage;
+
+        if (CurrentHP <= 0)
+        {
+            Destroy(gameObject);
+            IngameManager.IsWin = true;
+        }
+    }
+
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
-
-        DirToPlayer = (Player.gameObject.transform.position - gameObject.transform.position);
-        Talon_W();
+        player = GameObject.Find("Player");
+        waitFire = false;
+        DirToPlayer = (player.gameObject.transform.position - gameObject.transform.position);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        DirToPlayer = (Player.gameObject.transform.position - gameObject.transform.position);
-        // agent.SetDestination(Player.gameObject.transform.position);'
-        //Talon_W();
-    }
-
-    void Zeri_Q()
-    {
-        GameObject bullet_ = Instantiate(Bullet, gameObject.transform);
-        bullet_.transform.rotation = Quaternion.FromToRotation(Vector3.up, DirToPlayer);
-        bullet_.GetComponent<Rigidbody2D>().velocity = DirToPlayer.normalized * new Vector2(10f, 10f);
-    }
-
-    void Talon_W()
-    {
-        float angle = 15f;
-        for (int i = 0; i < 3; i++)
+        if (CurrentHP <= 0)
         {
-            Vector2 originalDirection = DirToPlayer.normalized;
-            Vector2 direction = RotateVector2D(originalDirection, (angle * i) - 15f);
+            return;
+        }
 
-            GameObject bullet_ = Instantiate(Bullet, bulletStartTransform.position, Quaternion.identity);
-            Rigidbody2D bulletRigidbody = bullet_.GetComponent<Rigidbody2D>();
-            bulletRigidbody.velocity = direction.normalized * new Vector2(20f, 20f);
+        DirToPlayer = (player.gameObject.transform.position - gameObject.transform.position);
 
-           StartCoroutine(ReturnBulletAfterDelay(bulletRigidbody, Talon_w_time));
- 
+        RotateTransform();
+
+        float distanceToPlayer = DirToPlayer.magnitude;
+
+        if (distanceToPlayer > MinDistanceToPlayer)
+        {
+            Agent.SetDestination(player.transform.position);
+            IsMove = true;
+        }
+        else
+        {
+            if (!IsObstacleBetweenEnemyAndPlayer())
+            {
+                UpdateFire();
+                Agent.ResetPath();
+                IsMove = false;
+            }
+            else
+            {
+                Agent.SetDestination(player.transform.position);
+                IsMove = true;
+            }
         }
     }
 
-    void Samira_R()
+    void UpdateFire()
     {
-        float angle = 12f;
-        for (int i = 0; i < 30; i++)
+        if (waitFire)
+            return;
+
+        if (fireCoroutine != null)
+            StopCoroutine(fireCoroutine);
+
+        fireCoroutine = StartCoroutine(Fire());
+    }
+
+    IEnumerator Fire()
+    {
+        waitFire = true;
+        var r = Random.Range(0, 3);
+
+        if (r == 0)
+            zerry.Fire(DirToPlayer);
+        else if (r == 1)
+            talon.Fire(DirToPlayer);
+        else
+            samira.Fire();
+
+        float timer = 0;
+        while (timer < FireDelay)
         {
-            Vector2 direction = new Vector2(Mathf.Cos(angle * i * Mathf.Deg2Rad), Mathf.Sin(angle *i * Mathf.Deg2Rad));
-            GameObject bullet_ = Instantiate(Bullet, gameObject.transform);
-            bullet_.transform.rotation = Quaternion.FromToRotation(Vector3.up, DirToPlayer);
-            bullet_.GetComponent<Rigidbody2D>().velocity = direction * new Vector2(10f,10f);
+            timer += Time.deltaTime;
+            yield return null;
         }
+
+        waitFire = false;
     }
 
-    Vector2 RotateVector2D(Vector2 vector, float angle)
+    private void RotateTransform()
     {
-        Quaternion rotation = Quaternion.Euler(0, 0, angle);
-        Vector2 rotatedVector = rotation * vector;
-
-        return rotatedVector;
+        float deg = Mathf.Atan2(DirToPlayer.y, DirToPlayer.x) * Mathf.Rad2Deg;
+        var newAngle = Mathf.Abs(deg) <= 90 ? 0 : 180.0f;
+        targetTransform.transform.localRotation = Quaternion.Euler(0, newAngle, 0);
     }
-    System.Collections.IEnumerator ReturnBulletAfterDelay(Rigidbody2D bulletRigidbody, float delay)
+
+    bool IsObstacleBetweenEnemyAndPlayer()
     {
-        yield return new WaitForSeconds(delay);
-        bulletRigidbody.velocity = -bulletRigidbody.velocity;
+        float distanceToPlayer = DirToPlayer.magnitude;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, (player.transform.position - transform.position).normalized, distanceToPlayer, obstacleLayer);
 
-        StartCoroutine(DestroyBulletAfterDelay(bulletRigidbody, Talon_w_time)); 
+        if (hit.collider != null)
+        {
+            return true;
+        }
+        return false;
     }
-    System.Collections.IEnumerator DestroyBulletAfterDelay(Rigidbody2D bulletRigidbody, float delay)
-    {
-        yield return new WaitForSeconds(delay);
 
-        Destroy(bulletRigidbody.gameObject);
-    }
 }

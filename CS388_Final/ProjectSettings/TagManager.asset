@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Bullet
   - Trigger
+  - Boss
   layers:
   - Default
   - TransparentFX

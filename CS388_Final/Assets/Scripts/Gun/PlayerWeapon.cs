@@ -46,7 +46,7 @@ public class PlayerWeapon : MonoBehaviour
         var switchGun = PlayerInput.Instance.InputData.SwitchGun;
 
         var currentGun = GetCurrentGun();
-        currentGun.Holder.SetActive(state.State != State.Dodge);
+        currentGun.Holder.SetActive(state.State != State.Dodge && state.State != State.DoingDodge);
         if (state.State != State.Dodge && switchGun && !GetCurrentGun().WaitReload)
             SwitchGun();
     }

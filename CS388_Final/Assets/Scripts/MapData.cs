@@ -13,7 +13,9 @@ public class MapData : MonoBehaviour
 
     public void SpawnPlayer(GameObject player)
     {
+        var com = player.GetComponent<PlayerData>();
         player.transform.position = new Vector3(playerSpawnPosition.position.x, playerSpawnPosition.position.y, 0);
-        player.GetComponent<PlayerData>().RemainEnemy.SetMax(MaxEnemy);
+        com.RemainEnemy.SetMax(MaxEnemy);
+        com.RemainEnemy.Panel.gameObject.SetActive(true);
     }
 }
