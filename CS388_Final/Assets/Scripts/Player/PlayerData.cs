@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     public RemainEnemyUI RemainEnemy;
+    public BossUI BossUI;
 
     [SerializeField] private PlayerState state;
     [SerializeField] private PlayerHP hpUI;

@@ -54,6 +54,12 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.tag == "Trigger")
             return;
 
+        if (other.gameObject.tag == "Boss")
+        {
+            var boss = other.GetComponent<Boss>();
+            boss.ApplyDamage(damage);
+        }
+
         if (other.gameObject.tag == "Enemy")
         {
             var enemy = other.GetComponent<Enemy>();

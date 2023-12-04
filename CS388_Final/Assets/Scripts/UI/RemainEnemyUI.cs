@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class RemainEnemyUI : MonoBehaviour
 {
+    public GameObject Panel;
     [SerializeField] private TMP_Text text;
 
     private int max;

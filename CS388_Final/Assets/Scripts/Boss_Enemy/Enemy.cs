@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
 
     public void DestroyObject()
     {
+        MapData.RemainEnemy -= 1;
         Destroy(gameObject);
     }
 
@@ -173,10 +174,11 @@ public class Enemy : MonoBehaviour
         CurHp -= damage;
         if (CurHp <= 0)
         {
-            MapData.RemainEnemy -= 1;
             if (fireCoroutine != null)
                 StopCoroutine(fireCoroutine);
+
             fireCoroutine = null;
+            agent.velocity = Vector3.zero;
         }
         UpdateHealth();
     }

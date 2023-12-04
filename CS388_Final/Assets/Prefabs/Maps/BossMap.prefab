@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &381911748317415808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1805516130954735530}
+  m_Layer: 0
+  m_Name: BossSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1805516130954735530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381911748317415808}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.19, y: 5.84, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5920436509592547223}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1458347287199975379
 GameObject:
   m_ObjectHideFlags: 0
@@ -3468,7 +3499,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5920436509592547223}
   - component: {fileID: 8405114235892591044}
-  - component: {fileID: 321766062201157751}
+  - component: {fileID: 6510508957982679542}
   m_Layer: 0
   m_Name: BossMap
   m_TagString: Untagged
@@ -3491,6 +3522,7 @@ Transform:
   m_Children:
   - {fileID: 6127596320939237839}
   - {fileID: 4108225992921671295}
+  - {fileID: 1805516130954735530}
   - {fileID: 416089163776550285}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3506,7 +3538,7 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &321766062201157751
+--- !u!114 &6510508957982679542
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3515,7 +3547,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6995532288935023534}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc7177851dfd4f345bd7e100d8c64c2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5346847329b9fee4ca2308c085408915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpawnPosition: {fileID: 416089163776550285}
+  bossSpawnTransform: {fileID: 1805516130954735530}
+  playerStartPosition: {fileID: 416089163776550285}
