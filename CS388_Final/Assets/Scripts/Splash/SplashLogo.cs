@@ -9,9 +9,13 @@ public class SplashLogo : MonoBehaviour
 
     void Start()
     {
-        Npad.Initialize();
+        if(Application.platform == RuntimePlatform.Switch)
+        {
+            Npad.Initialize();
         Npad.SetSupportedIdType(new NpadId[] { NpadId.Handheld, NpadId.No1 });
         Npad.SetSupportedStyleSet(NpadStyle.FullKey | NpadStyle.Handheld | NpadStyle.JoyDual);
+        }
+    
     }
 
     // Update is called once per frame
