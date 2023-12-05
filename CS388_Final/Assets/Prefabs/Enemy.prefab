@@ -96,6 +96,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   Enemy_Audio: {fileID: 2614858461743492380}
+  Spawn_Clip: {fileID: 8300000, guid: 4b4f08116473c5b4baad38d63bdf3210, type: 3}
   Damaged_Clip: {fileID: 8300000, guid: c51fb451e71934c45a29ccfc1675e916, type: 3}
   Death_Clip: {fileID: 8300000, guid: ddd30cc844f45774e9a3ffbbf000a5fd, type: 3}
   Fire_Clip: {fileID: 8300000, guid: 6b8529cfb65779d4994a6768e2b3ff64, type: 3}
