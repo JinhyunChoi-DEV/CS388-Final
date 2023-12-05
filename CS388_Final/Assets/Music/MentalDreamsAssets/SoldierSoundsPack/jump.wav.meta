@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 5a618c007fe353c459f6916c3860e274
+AssetOrigin:
+  serializedVersion: 1
+  productId: 29662
+  packageName: Weapon Soldier Sounds Pack
+  packageVersion: draft
+  assetPath: Assets/MentalDreamsAssets/SoldierSoundsPack/jump.wav
+  uploadId: 50840
 AudioImporter:
   externalObjects: {}
   serializedVersion: 7
@@ -11,7 +18,7 @@ AudioImporter:
     compressionFormat: 0
     quality: 1
     conversionMode: 0
-    preloadAudioData: 0
+    preloadAudioData: 1
   platformSettingOverrides: {}
   forceToMono: 0
   normalize: 1
@@ -21,10 +28,3 @@ AudioImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 29662
-  packageName: Weapon Soldier Sounds Pack
-  packageVersion: draft
-  assetPath: Assets/MentalDreamsAssets/SoldierSoundsPack/jump.wav
-  uploadId: 50840

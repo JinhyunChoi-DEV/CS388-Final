@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1504af2b194228479f71e432eef659b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ForcedPC: 1
+  ForcedPC: 0
 --- !u!4 &332625396
 Transform:
   m_ObjectHideFlags: 0
@@ -518,8 +518,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BgSound: {fileID: 618805064}
   BgList:
-  - {fileID: 8300000, guid: f15af3da1b45ff947a981d8d8b261821, type: 3}
-  - {fileID: 8300000, guid: 463f39c8c1318b74ca1428aebc68ddae, type: 3}
+  - {fileID: 8300000, guid: 67aac6bf0f68b37408e2fa94d98eee03, type: 3}
+  - {fileID: 8300000, guid: 6a7401baeb797204a97e926a883b0217, type: 3}
 --- !u!4 &618805063
 Transform:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using nn.hid;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,13 +10,12 @@ public class SplashLogo : MonoBehaviour
 
     void Start()
     {
-        if(Application.platform == RuntimePlatform.Switch)
+        if (Application.platform == RuntimePlatform.Switch)
         {
             Npad.Initialize();
-        Npad.SetSupportedIdType(new NpadId[] { NpadId.Handheld, NpadId.No1 });
-        Npad.SetSupportedStyleSet(NpadStyle.FullKey | NpadStyle.Handheld | NpadStyle.JoyDual);
+            Npad.SetSupportedIdType(new NpadId[] { NpadId.Handheld, NpadId.No1 });
+            Npad.SetSupportedStyleSet(NpadStyle.FullKey | NpadStyle.Handheld | NpadStyle.JoyDual);
         }
-    
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class SplashLogo : MonoBehaviour
             var style = Npad.GetStyleSet(NpadId.Handheld);
             Npad.GetState(ref npadState, npadId, style);
 
-            if (npadState.GetButton(NpadButton.L) && npadState.GetButton(NpadButton.R))
+            if ((npadState.GetButton(NpadButton.L) && npadState.GetButton(NpadButton.R)))
             {
                 SceneManager.LoadScene("MainMenu");
             }

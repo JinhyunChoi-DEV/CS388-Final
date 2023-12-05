@@ -16,7 +16,7 @@ public class PlayerInput : MonoBehaviour
     public static PlayerInput Instance { get; private set; }
     public PlayerInputData InputData;
     public bool ForcedPC;
-    public bool IsController => (ForcedPC != true) && controllerInput == true;
+    public bool IsController => ((ForcedPC != true) && controllerInput == true) || Application.platform == RuntimePlatform.Switch;
 
     private bool controllerInput;
     private NpadId npadId = NpadId.Handheld;

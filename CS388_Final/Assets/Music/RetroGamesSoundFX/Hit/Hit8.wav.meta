@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: f3aebff15a2971c49bac005a7bc5bc9b
+AssetOrigin:
+  serializedVersion: 1
+  productId: 27280
+  packageName: Retro Games Sound FX
+  packageVersion: 1.3
+  assetPath: Assets/Audio/RetroGamesSoundFX/Hit/Hit8.wav
+  uploadId: 47497
 AudioImporter:
   externalObjects: {}
   serializedVersion: 7
@@ -11,7 +18,7 @@ AudioImporter:
     compressionFormat: 0
     quality: 0.5
     conversionMode: 0
-    preloadAudioData: 0
+    preloadAudioData: 1
   platformSettingOverrides: {}
   forceToMono: 1
   normalize: 1
@@ -21,10 +28,3 @@ AudioImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 27280
-  packageName: Retro Games Sound FX
-  packageVersion: 1.3
-  assetPath: Assets/Audio/RetroGamesSoundFX/Hit/Hit8.wav
-  uploadId: 47497

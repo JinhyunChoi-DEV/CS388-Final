@@ -902,8 +902,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BgSound: {fileID: 1191338568}
   BgList:
-  - {fileID: 8300000, guid: f15af3da1b45ff947a981d8d8b261821, type: 3}
-  - {fileID: 8300000, guid: 463f39c8c1318b74ca1428aebc68ddae, type: 3}
+  - {fileID: 8300000, guid: 67aac6bf0f68b37408e2fa94d98eee03, type: 3}
+  - {fileID: 8300000, guid: 6a7401baeb797204a97e926a883b0217, type: 3}
 --- !u!4 &1191338570
 Transform:
   m_ObjectHideFlags: 0

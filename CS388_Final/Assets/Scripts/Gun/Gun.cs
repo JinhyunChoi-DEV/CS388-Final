@@ -63,8 +63,16 @@ public class Gun : MonoBehaviour
         if (PlayerInput.Instance.InputData.Fire && canFire)
             Fire();
 
-        if (CurrentBulletCount <= 0 || PlayerInput.Instance.InputData.Reload)
-            Reload();
+        if(TotalBullets == -1)
+        {
+            if (CurrentBulletCount <= 0 || PlayerInput.Instance.InputData.Reload)
+                Reload();
+        }
+        else
+        {
+            if ((CurrentBulletCount <= 0 || PlayerInput.Instance.InputData.Reload) && (TotalBullets > 0))
+                Reload();
+        }
     }
 
     void Fire()

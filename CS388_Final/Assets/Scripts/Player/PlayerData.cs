@@ -47,7 +47,7 @@ public class PlayerData : MonoBehaviour
             IsAlive = false;
         }
 
-        IgnoreDamageCollision = state.State == State.Dodge;
+        IgnoreDamageCollision = state.State == State.Dodge || state.State == State.DoingDodge;
     }
 
     public void ApplyDamage()
